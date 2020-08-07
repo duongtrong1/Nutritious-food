@@ -1,0 +1,29 @@
+.image img {
+    max-width: 250px;
+    height: auto;
+}
+
+.title-main {
+    font-size: 18px;
+    font-weight: 700;
+    margin: 1rem 0
+}
+
+.box_content {
+    background-color: #f8f9fa;
+    padding: 10px
+}
+
+.product-details-inner {
+    border: 1px solid #62d2a2;
+    padding: .5rem;
+    border-radius: 5px;
+    margin-top: 1rem;
+    position: relative;
+}
+
+.close-quick-view {
+    position: absolute;
+    z-index: 1;
+    right: .5rem;
+}

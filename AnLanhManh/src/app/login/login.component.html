@@ -1,0 +1,39 @@
+<div class="login-register-wrapper pt-60 pb-60">
+    <div class="container">
+        <div class="member-area-from-wrap">
+            <div class="row">
+                <!-- Login Content Start -->
+                <div class="col-lg-6 loginForm">
+                    <div class="login-reg-form-wrap  pr-lg-50">
+                        <h2>Đăng Nhập</h2>
+                        <form name="loginForm">
+                            <div class="single-input-item">
+                                <input type="text" #account placeholder="Tên người dùng hoặc số điện thoại" required (keyup.enter)="handleLogin(account.value, password.value)"/>
+                            </div>
+                            <div class="single-input-item">
+                                <input type="password" #password placeholder="Mật khẩu" required (keyup.enter)="handleLogin(account.value, password.value)"/>
+                            </div>
+                            <span *ngIf="textError != null" class="error">{{textError}}</span>
+                            <div class="single-input-item">
+                                <div class="login-reg-form-meta d-flex align-items-center justify-content-between">
+                                    <div class="remember-meta">
+                                        <div class="custom-control custom-checkbox">
+                                            <input type="checkbox" class="custom-control-input" id="rememberMe">
+                                            <label class="custom-control-label" for="rememberMe">Lưu mật khẩu</label>
+                                        </div>
+                                    </div>
+                                    <a href="/register" class="forget-pwd">Bạn chưa có tài khoản? Đăng ký tại đây!</a>
+                                </div>
+                            </div>
+                            <div class="single-input-item">
+                                <button type="button" class="btn btn__bg btn__sqr"
+                                    (click)="handleLogin(account.value, password.value)">Đăng nhập</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <!-- Login Content End -->
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,10 @@
+.image img {
+    width: 270px;
+    height: 270px;
+}
+
+.product-image-title{
+    max-width: 300px;
+    max-height: 370px;
+}
+.product-thumb img{height:100%;width:100%;object-fit:cover}

@@ -1,0 +1,195 @@
+<div class="breadcrumb-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="breadcrumb-wrap text-center">
+                    <nav aria-label="breadcrumb">
+                        <h2>Thanh Toán</h2>
+                        <ul class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="/">Trang Chủ</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Thanh Toán</li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div *ngIf="errorListcart != null" class="row">
+    <div class="col-12">
+        <div class="breadcrumb-wrap text-center mt-50">
+            <nav aria-label="breadcrumb">
+                <h2>{{errorListcart}}</h2>
+            </nav>
+        </div>
+    </div>
+</div>
+<div *ngIf="errorListcart == null" class="checkout-page-wrapper pt-60 pb-54">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="checkout-billing-details-wrap">
+                    <h2>Thông tin nhận hàng</h2>
+                    <div class="billing-form-wrap" *ngIf="isShowForm != false">
+                        <form>
+                            <div class="single-input-item">
+                                <div class="login-reg-form-meta d-flex align-items-center justify-content-between">
+                                    <div class="remember-meta">
+                                        <div class="custom-control custom-radio" *ngFor="let addr of listAddress">
+                                            <input type="radio" [value]="addr?.id" class="custom-control-input"
+                                                id="{{addr?.id}}" [(ngModel)]="currentAddress.address" name="address">
+                                            <label (click)="logAddr()" class="custom-control-label title"
+                                                for="{{addr?.id}}">{{addr?.phone}} - {{addr?.title}}</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="single-input-item">
+                                <label for="ordernote">Ghi chú</label>
+                                <textarea [(ngModel)]="currentAddress.note" name="note" id="note" cols="30" rows="3"
+                                    placeholder="Bạn có ghi chú gì đó cho chúng tôi. Hãy viết nó tại đây."></textarea>
+                            </div>
+                            <div class="error">
+                                <span *ngIf="textError != null">{{textError}}</span>
+                            </div>
+                            <div class="single-input-item">
+                                <div class="summary-footer-area">
+                                    <button (click)="addAddr()" type="button" class="btn btn__bg">Thêm Địa Chỉ</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="billing-form-wrap" *ngIf="isShowForm == false">
+                        <form>
+                            <div class="single-input-item">
+                                <label for="city" class="required">Thành phố</label>
+                                <select name="city" #city class="nice-select" id="city"
+                                    (change)="selectTinhThanhPho(city.value)">
+                                    <option *ngFor="let item of dataTinhThanhPho"
+                                        value="{{item.code}}@alm;{{item.name}}">{{item.name}}</option>
+                                </select>
+                            </div>
+
+                            <div class="single-input-item">
+                                <label for="street-address" class="required mt-20">Quận/Huyện</label>
+                                <select name="quanhuyen" #quanhuyen class="nice-select" id="street-address"
+                                    (change)="selectQuanHuyen(quanhuyen.value)">
+                                    <option *ngFor="let item of dataQuanHuyen" value="{{item.code}}@alm;{{item.name}}">
+                                        {{item.name}}</option>
+                                </select>
+                            </div>
+
+                            <div class="single-input-item">
+                                <label for="street-address" class="required mt-20">Phường/Xã</label>
+                                <select name="quanhuyen" #xaphuong class="nice-select" id="street-address">
+                                    <option *ngFor="let item of dataPhuongXa" value="{{item.code}}@alm;{{item.name}}">
+                                        {{item.name}}</option>
+                                </select>
+                            </div>
+                            <div class="single-input-item">
+                                <label style="margin-top: 10px" for="phone">Số Nhà/Đường Phố</label>
+                                <input type="text" [(ngModel)]="address.addressDetails" name="addressDetails"
+                                    placeholder="Đạ chỉ cụ thể của bạn" />
+                            </div>
+                            <div class="single-input-item">
+                                <label for="phone">Điện thoại</label>
+                                <input type="text" [(ngModel)]="currentAddress.phone" name="phone" id="phone"
+                                    placeholder="Vui lòng xác minh lại số điện thoại của bạn" />
+                            </div>
+                            <div class="error">
+                                <span *ngIf="textError != null">{{textError}}</span>
+                            </div>
+                            <div class="single-input-item">
+                                <div class="summary-footer-area">
+                                    <button type="button" (click)="saveAddr()" class="btn btn__bg">Lưu</button>
+                                    <button (click)="back()" type="button" class="btn btn__bg ml-100">Huỷ</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="orderPage col-lg-6">
+                <div class="order-summary-details mt-md-50 mt-sm-50">
+                    <h2>Đơn hàng của bạn</h2>
+                    <div class="order-summary-content">
+                        <!-- Order Summary Table -->
+                        <div class="order-summary-table table-responsive text-center" *ngIf="listCart != null">
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>Sản phẩm</th>
+                                        <th>Giá Tiền</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let item of listCart.products">
+                                        <td><a href="/p/{{util.generateURL(item?.name, item?.id)}}">{{item?.name}}</a>
+                                        </td>
+                                        <td>{{item?.quantity}} x {{util.formatPrice(item?.price)}}</td>
+                                    </tr>
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <td>Tổng tiền sản phẩm</td>
+                                        <td><strong>{{util.formatPrice(getTotalPriceCart())}}</strong></td>
+                                    </tr>
+                                    <tr>
+                                        <td>VAT</td>
+                                        <td class="d-flex justify-content-center">
+                                            <ul class="shipping-type">
+                                                <li>
+                                                    <div class="custom-control custom-radio">
+                                                        <input type="radio" id="freeshipping" name="shipping"
+                                                            class="custom-control-input" checked />
+                                                        <label class="custom-control-label" for="freeshipping">Miễn phí
+                                                            vận chuyển</label>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Thành tiền</td>
+                                        <td><strong
+                                                class="total-price">{{util.formatPrice(getTotalPriceCart())}}</strong><br><em>(Đã
+                                                bao gồm VAT nếu có)</em></td>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+                        <!-- Order Payment Method -->
+                        <div class="order-payment-method">
+                            <div class="single-payment-method">
+                                <div class="payment-method-name">
+                                    <div class="custom-control custom-radio">
+                                        <input type="radio" id="cashon" [(ngModel)]="address.type" name="type"
+                                            [value]="1" class="custom-control-input" />
+                                        <label class="custom-control-label" for="cashon">Thanh toán bằng tiền
+                                            mặt</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="single-payment-method">
+                                <div class="payment-method-name">
+                                    <div class="custom-control custom-radio">
+                                        <input type="radio" id="vnpay" [(ngModel)]="address.type" name="type"
+                                            [value]="2" class="custom-control-input" />
+                                        <label class="custom-control-label" for="vnpay">Thanh toán bằng VNPAY</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="summary-footer-area">
+                                <button type="button" (click)="payNow()" class="btn btn__bg">Đặt Mua</button>
+                                <p class="mt-20">(Xin vui lòng kiểm tra lại đơn hàng trước khi Đặt Mua)</p>
+                                <span *ngIf="errorOrder != null" class="error mt-20">Bạn chưa có địa chỉ nhận hàng.Vui
+                                    lòng thêm địa chỉ ở khung bên trái</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,935 @@
+{
+	"id": "0bd42bc2-a55b-c1e3-bc75-958914d81f73",
+	"name": "Nutritious food",
+	"description": "",
+	"order": [],
+	"folders": [
+		{
+			"id": "ef500588-134e-66ea-71ac-f3f642ea14a9",
+			"name": "Auth",
+			"description": "",
+			"order": [
+				"0fec1740-581e-8c40-38e4-7c968a06a183",
+				"b4fcf0cd-e733-7616-505b-06916ddd516a",
+				"e737961a-fd66-c678-ac24-202381010b43",
+				"1544ecc5-5979-d9c5-5285-95286f3507fb",
+				"3e25c39c-8ea3-388e-5b61-37a4d96c8fe3",
+				"1824d8e2-e0d5-0c5d-c76b-85f2b58f3f7b"
+			],
+			"folders_order": [],
+			"owner": "9350909",
+			"collectionId": "0bd42bc2-a55b-c1e3-bc75-958914d81f73"
+		},
+		{
+			"id": "a843f04f-a97c-80d6-ea02-633fd97aded4",
+			"name": "Category",
+			"description": "",
+			"order": [
+				"81d79a53-c84d-a8d4-7d1c-41430fbb1acc",
+				"3cb42059-35a5-06a9-60d5-f972bdc6a6c2",
+				"215e0e4d-c2e1-3a40-636f-411cecc99944",
+				"24545ecb-a052-3d22-0d0e-851d307ab986"
+			],
+			"folders_order": [],
+			"owner": "9350909",
+			"collectionId": "0bd42bc2-a55b-c1e3-bc75-958914d81f73"
+		},
+		{
+			"id": "99de74b8-0eb0-1a2c-6bae-49fad87ddb76",
+			"name": "Combo",
+			"description": "",
+			"order": [
+				"172d9a95-373d-aef3-b7d4-8aabe6427a8e",
+				"15302d56-89ae-7088-c229-c6ef98f6a931"
+			],
+			"folders_order": [],
+			"owner": "9350909",
+			"collectionId": "0bd42bc2-a55b-c1e3-bc75-958914d81f73"
+		},
+		{
+			"name": "Food",
+			"description": "",
+			"collectionId": "0bd42bc2-a55b-c1e3-bc75-958914d81f73",
+			"order": [
+				"588f0103-d0ff-eb91-167b-92a933c0b8a0",
+				"f3892c72-80c8-1d0d-efa4-cbeb882abd63"
+			],
+			"owner": "9350909",
+			"folders_order": [],
+			"id": "03ef040a-df7a-18be-9e94-3b04d946b509"
+		},
+		{
+			"name": "Order",
+			"description": "",
+			"collectionId": "0bd42bc2-a55b-c1e3-bc75-958914d81f73",
+			"order": [
+				"e1156196-e72a-3577-c061-0e7c93bcc26d",
+				"97744f8c-2a09-6814-4227-f0bcd14a5a44",
+				"fd43a240-5b37-f6cd-4aa6-2e17aca081bc"
+			],
+			"owner": "9350909",
+			"folders_order": [],
+			"id": "e153b4f8-f678-f595-d9cc-43932ea388ed"
+		},
+		{
+			"id": "a7d9df61-198e-7cf3-367c-9e7e6b20c3c5",
+			"name": "Schedule",
+			"description": "",
+			"order": [
+				"d26c16bd-897c-8368-b26d-c26dfc1ecb19",
+				"c33dd6ea-4c6d-ad7c-3a6e-83e170239c0c"
+			],
+			"folders_order": [],
+			"owner": "9350909",
+			"collectionId": "0bd42bc2-a55b-c1e3-bc75-958914d81f73"
+		},
+		{
+			"id": "5c6751c4-6f4f-8b8c-f58c-08abd6e1a5cc",
+			"name": "ScheduleCombo",
+			"description": "",
+			"order": [
+				"8b738645-123e-245e-4123-99600a85779e",
+				"b84a9a23-5907-5115-721e-62f80602c98a",
+				"6ca04553-0ea7-566b-c921-6edda0689c6b",
+				"5f0847af-dd9c-522c-9889-7750ae633464"
+			],
+			"folders_order": [],
+			"owner": "9350909",
+			"collectionId": "0bd42bc2-a55b-c1e3-bc75-958914d81f73"
+		},
+		{
+			"name": "User",
+			"description": "",
+			"collectionId": "0bd42bc2-a55b-c1e3-bc75-958914d81f73",
+			"order": [
+				"20b868a0-06e5-e036-19e3-7aa4fe92beb6"
+			],
+			"owner": "9350909",
+			"folders_order": [],
+			"id": "fb9867e1-001f-f62a-2482-773b1e4e73b8"
+		},
+		{
+			"name": "UserProfile",
+			"description": "",
+			"collectionId": "0bd42bc2-a55b-c1e3-bc75-958914d81f73",
+			"order": [
+				"dd391011-4b88-51a6-c10e-0d64d63f6b25",
+				"be543931-17b9-a034-09ba-beb93cdaeb6a"
+			],
+			"owner": "9350909",
+			"folders_order": [],
+			"id": "99b18dc0-b201-8f07-15cf-b6ddb56bdca7"
+		}
+	],
+	"folders_order": [
+		"ef500588-134e-66ea-71ac-f3f642ea14a9",
+		"a843f04f-a97c-80d6-ea02-633fd97aded4",
+		"a7d9df61-198e-7cf3-367c-9e7e6b20c3c5",
+		"5c6751c4-6f4f-8b8c-f58c-08abd6e1a5cc",
+		"99de74b8-0eb0-1a2c-6bae-49fad87ddb76",
+		"fb9867e1-001f-f62a-2482-773b1e4e73b8",
+		"e153b4f8-f678-f595-d9cc-43932ea388ed",
+		"99b18dc0-b201-8f07-15cf-b6ddb56bdca7",
+		"03ef040a-df7a-18be-9e94-3b04d946b509"
+	],
+	"timestamp": 0,
+	"owner": "9350909",
+	"public": false,
+	"requests": [
+		{
+			"id": "0fec1740-581e-8c40-38e4-7c968a06a183",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "localhost:8080/api/auth/signup",
+			"folder": "ef500588-134e-66ea-71ac-f3f642ea14a9",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1573305924552,
+			"name": "Signup",
+			"description": "",
+			"collectionId": "0bd42bc2-a55b-c1e3-bc75-958914d81f73",
+			"responses": [],
+			"rawModeData": "{\n\t\"name\" : \"quyen96\",\n\t\"username\" : \"quyen96\",\n\t\"email\" : \"quyen96@gmail.com\",\n\t\"phone\" : \"0288044009\",\n\t\"password\" : \"9876543210abc\"\n}"
+		},
+		{
+			"id": "15302d56-89ae-7088-c229-c6ef98f6a931",
+			"headers": "Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyIiwiaWF0IjoxNTc0MTYzOTAwLCJleHAiOjE1NzQ3Njg3MDB9.JzYnOzMlD0IkWCinzl3F-aH-ISg0dKDPR2Hc1cg2DjYQHVigEcpxd-1Dgcn1H2ZGhp-HWF3HvKGZlG83uM_4Dw\nContent-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyIiwiaWF0IjoxNTc0MTYzOTAwLCJleHAiOjE1NzQ3Njg3MDB9.JzYnOzMlD0IkWCinzl3F-aH-ISg0dKDPR2Hc1cg2DjYQHVigEcpxd-1Dgcn1H2ZGhp-HWF3HvKGZlG83uM_4Dw",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "localhost:9000/api/combo/update/1",
+			"folder": "99de74b8-0eb0-1a2c-6bae-49fad87ddb76",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "PUT",
+			"data": [],
+			"dataMode": "raw",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1574181949013,
+			"name": "Combo Update",
+			"description": "",
+			"collectionId": "0bd42bc2-a55b-c1e3-bc75-958914d81f73",
+			"responses": [],
+			"rawModeData": "{\n\n\t\"categoryIds\" : [1]\n}"
+		},
+		{
+			"id": "1544ecc5-5979-d9c5-5285-95286f3507fb",
+			"headers": "Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIzIiwiaWF0IjoxNTczMzA2MTMxLCJleHAiOjE1NzM5MTA5MzF9.RJDGUcq7IABb1mc8-UjzaJYO5zLpKl9XHxAKPhhlcMvN5PZKCBWmMKPrvQj3LW3D8bwCGtRsmdEzhzUudgfcXQ\n",
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIzIiwiaWF0IjoxNTczMzA2MTMxLCJleHAiOjE1NzM5MTA5MzF9.RJDGUcq7IABb1mc8-UjzaJYO5zLpKl9XHxAKPhhlcMvN5PZKCBWmMKPrvQj3LW3D8bwCGtRsmdEzhzUudgfcXQ",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "localhost:8080/api/auth/me",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "GET",
+			"collectionId": "0bd42bc2-a55b-c1e3-bc75-958914d81f73",
+			"data": null,
+			"dataMode": "params",
+			"name": "Get me",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1573406268172,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"folder": "ef500588-134e-66ea-71ac-f3f642ea14a9"
+		},
+		{
+			"id": "172d9a95-373d-aef3-b7d4-8aabe6427a8e",
+			"headers": "Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyIiwiaWF0IjoxNTc0MTYzOTAwLCJleHAiOjE1NzQ3Njg3MDB9.JzYnOzMlD0IkWCinzl3F-aH-ISg0dKDPR2Hc1cg2DjYQHVigEcpxd-1Dgcn1H2ZGhp-HWF3HvKGZlG83uM_4Dw\nContent-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyIiwiaWF0IjoxNTc0MTYzOTAwLCJleHAiOjE1NzQ3Njg3MDB9.JzYnOzMlD0IkWCinzl3F-aH-ISg0dKDPR2Hc1cg2DjYQHVigEcpxd-1Dgcn1H2ZGhp-HWF3HvKGZlG83uM_4Dw",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "localhost:8080/api/combo/create",
+			"folder": "99de74b8-0eb0-1a2c-6bae-49fad87ddb76",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1574164519368,
+			"name": "Combo create",
+			"description": "",
+			"collectionId": "0bd42bc2-a55b-c1e3-bc75-958914d81f73",
+			"responses": [],
+			"rawModeData": "{\n\t\"name\": \"Bữa trưa cay đắng 123\", \n\t\"description\" : \"ngon vv\",\n\t\"image\" : \"12\",\n\t\"price\" : 230,\n\t\"carbonhydrates\" : 230,\n\t\"protein\" : 230,\n\t\"lipid\" : 230,\n\t\"xenluloza\" : 230,\n\t\"canxi\" : 230,\n\t\"iron\" : 230,\n\t\"zinc\" : 230,\n\t\"vitaminA\" : 230,\n\t\"vitaminB\" : 230,\n\t\"vitaminC\" : 230,\n\t\"vitaminD\" : 230,\n\t\"vitaminE\" : 230,\n\t\"foodIds\" : [],\n\t\"categoryIds\" : [2]\n}"
+		},
+		{
+			"id": "1824d8e2-e0d5-0c5d-c76b-85f2b58f3f7b",
+			"headers": "Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIzIiwiaWF0IjoxNTczNTU5NzczLCJleHAiOjE1NzQxNjQ1NzN9.lCW3C_8lopkHjIjEPgYDDenSJFjZsPYs_Q939RmzZJszkN9IiT-NdnGjsfRfsv633OSVG44cnNXFqg8zlXSTCQ\nContent-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIzIiwiaWF0IjoxNTczNTU5NzczLCJleHAiOjE1NzQxNjQ1NzN9.lCW3C_8lopkHjIjEPgYDDenSJFjZsPYs_Q939RmzZJszkN9IiT-NdnGjsfRfsv633OSVG44cnNXFqg8zlXSTCQ",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "localhost:8080/api/auth/password/change",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "PUT",
+			"collectionId": "0bd42bc2-a55b-c1e3-bc75-958914d81f73",
+			"data": [],
+			"dataMode": "raw",
+			"name": "Change password",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1573560029918,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"folder": "ef500588-134e-66ea-71ac-f3f642ea14a9",
+			"rawModeData": "{\n\t\"oldPassword\": \"987654321\",\n\t\"password\" : \"9876543210\",\n\t\"confirmPassword\" : \"9876543210\"\n}"
+		},
+		{
+			"id": "20b868a0-06e5-e036-19e3-7aa4fe92beb6",
+			"headers": "Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIzIiwiaWF0IjoxNTczMjg5ODE1LCJleHAiOjE1NzM4OTQ2MTV9.deyNP2xogc62Ec69m0PMhcS3McICDvJkxvp8_bIHf77io25eZyFOZZgx7AR6tpbjKo5GYUQmpi_Mf84r52MgIg\nAccept: application/json\n",
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIzIiwiaWF0IjoxNTczMjg5ODE1LCJleHAiOjE1NzM4OTQ2MTV9.deyNP2xogc62Ec69m0PMhcS3McICDvJkxvp8_bIHf77io25eZyFOZZgx7AR6tpbjKo5GYUQmpi_Mf84r52MgIg",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Accept",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "localhost:8080/api/users",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "GET",
+			"collectionId": "0bd42bc2-a55b-c1e3-bc75-958914d81f73",
+			"data": null,
+			"dataMode": "params",
+			"name": "User list",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1573305962019,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"folder": "fb9867e1-001f-f62a-2482-773b1e4e73b8"
+		},
+		{
+			"id": "215e0e4d-c2e1-3a40-636f-411cecc99944",
+			"headers": "Content-Type: application/json\nAuthorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyIiwiaWF0IjoxNTczODM4ODUxLCJleHAiOjE1NzQ0NDM2NTF9.k9_WXe0qNMWVMAky3fXYU4N1Ft6AvNI3EjmDK0Zhld5nAnApHaObtJF_SMXUDJfRj3oxjj4a8UifCCBmsDWAEQ\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Authorization",
+					"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyIiwiaWF0IjoxNTczODM4ODUxLCJleHAiOjE1NzQ0NDM2NTF9.k9_WXe0qNMWVMAky3fXYU4N1Ft6AvNI3EjmDK0Zhld5nAnApHaObtJF_SMXUDJfRj3oxjj4a8UifCCBmsDWAEQ",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "localhost:8080/api/category/update/4",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "PUT",
+			"collectionId": "0bd42bc2-a55b-c1e3-bc75-958914d81f73",
+			"data": [],
+			"dataMode": "raw",
+			"name": "Category Update ",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1574012481056,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"folder": "a843f04f-a97c-80d6-ea02-633fd97aded4",
+			"rawModeData": "{\n\t\"name\" : \"Bệnh lý 2\",\n\t\"description\" : \"ngon vcl\",\n\t\"image\" : \"1\"\n}"
+		},
+		{
+			"id": "24545ecb-a052-3d22-0d0e-851d307ab986",
+			"headers": "Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyIiwiaWF0IjoxNTczODM4ODUxLCJleHAiOjE1NzQ0NDM2NTF9.k9_WXe0qNMWVMAky3fXYU4N1Ft6AvNI3EjmDK0Zhld5nAnApHaObtJF_SMXUDJfRj3oxjj4a8UifCCBmsDWAEQ\n",
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyIiwiaWF0IjoxNTczODM4ODUxLCJleHAiOjE1NzQ0NDM2NTF9.k9_WXe0qNMWVMAky3fXYU4N1Ft6AvNI3EjmDK0Zhld5nAnApHaObtJF_SMXUDJfRj3oxjj4a8UifCCBmsDWAEQ",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "localhost:8080/api/category/parent/0",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "GET",
+			"collectionId": "0bd42bc2-a55b-c1e3-bc75-958914d81f73",
+			"data": null,
+			"dataMode": "params",
+			"name": "Category By Parent",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1574012631454,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"folder": "a843f04f-a97c-80d6-ea02-633fd97aded4"
+		},
+		{
+			"id": "3cb42059-35a5-06a9-60d5-f972bdc6a6c2",
+			"headers": "",
+			"headerData": [],
+			"url": "localhost:8080/api/category/4",
+			"folder": "a843f04f-a97c-80d6-ea02-633fd97aded4",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": [],
+			"dataMode": "params",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1574012502375,
+			"name": "Category get detail",
+			"description": "",
+			"collectionId": "0bd42bc2-a55b-c1e3-bc75-958914d81f73",
+			"responses": []
+		},
+		{
+			"id": "3e25c39c-8ea3-388e-5b61-37a4d96c8fe3",
+			"headers": "Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIzIiwiaWF0IjoxNTczMzA2MTMxLCJleHAiOjE1NzM5MTA5MzF9.RJDGUcq7IABb1mc8-UjzaJYO5zLpKl9XHxAKPhhlcMvN5PZKCBWmMKPrvQj3LW3D8bwCGtRsmdEzhzUudgfcXQ\n",
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIzIiwiaWF0IjoxNTczMzA2MTMxLCJleHAiOjE1NzM5MTA5MzF9.RJDGUcq7IABb1mc8-UjzaJYO5zLpKl9XHxAKPhhlcMvN5PZKCBWmMKPrvQj3LW3D8bwCGtRsmdEzhzUudgfcXQ",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "localhost:8080/api/auth/me-profile",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "GET",
+			"collectionId": "0bd42bc2-a55b-c1e3-bc75-958914d81f73",
+			"data": null,
+			"dataMode": "params",
+			"name": "Get me profile",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1573407464317,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"folder": "ef500588-134e-66ea-71ac-f3f642ea14a9"
+		},
+		{
+			"id": "588f0103-d0ff-eb91-167b-92a933c0b8a0",
+			"headers": "Content-Type: application/json\nAuthorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyIiwiaWF0IjoxNTc0MTYzOTAwLCJleHAiOjE1NzQ3Njg3MDB9.JzYnOzMlD0IkWCinzl3F-aH-ISg0dKDPR2Hc1cg2DjYQHVigEcpxd-1Dgcn1H2ZGhp-HWF3HvKGZlG83uM_4Dw\nAccept: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Authorization",
+					"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyIiwiaWF0IjoxNTc0MTYzOTAwLCJleHAiOjE1NzQ3Njg3MDB9.JzYnOzMlD0IkWCinzl3F-aH-ISg0dKDPR2Hc1cg2DjYQHVigEcpxd-1Dgcn1H2ZGhp-HWF3HvKGZlG83uM_4Dw",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Accept",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "localhost:9000/api/food/create",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1574186304495,
+			"name": "Food create",
+			"description": "",
+			"collectionId": "0bd42bc2-a55b-c1e3-bc75-958914d81f73",
+			"responses": [],
+			"rawModeData": "{\n\t\"name\": \"Com rang thap cam\", \n\t\"description\" : \"ngon vv\",\n\t\"image\" : \"12\",\n\t\"price\" : 230,\n\t\"carbonhydrates\" : 1230,\n\t\"protein\" : 1400,\n\t\"lipid\" : 230,\n\t\"xenluloza\" : 230,\n\t\"canxi\" : 230,\n\t\"iron\" : 230,\n\t\"zinc\" : 230,\n\t\"vitaminA\" : 230,\n\t\"vitaminB\" : 230,\n\t\"vitaminC\" : 230,\n\t\"vitaminD\" : 230,\n\t\"vitaminE\" : 230,\n\t\"cateId\" : [2],\n\t\"combos\" : [2]\n}"
+		},
+		{
+			"id": "5f0847af-dd9c-522c-9889-7750ae633464",
+			"name": "Schedule Combo detail",
+			"description": "",
+			"collectionId": "0bd42bc2-a55b-c1e3-bc75-958914d81f73",
+			"method": "GET",
+			"headers": "",
+			"data": [],
+			"rawModeData": "",
+			"url": "localhost:8080/api/schedule-combo/1",
+			"responses": [],
+			"pathVariableData": [],
+			"queryParams": [],
+			"headerData": [],
+			"collection_id": "0bd42bc2-a55b-c1e3-bc75-958914d81f73",
+			"folder": "5c6751c4-6f4f-8b8c-f58c-08abd6e1a5cc"
+		},
+		{
+			"id": "6ca04553-0ea7-566b-c921-6edda0689c6b",
+			"name": "ScheduleCombo get by ComboId",
+			"description": "",
+			"collectionId": "0bd42bc2-a55b-c1e3-bc75-958914d81f73",
+			"method": "GET",
+			"headers": "",
+			"data": [],
+			"rawModeData": "",
+			"url": "localhost:8080/api/schedule-combo/combo/1",
+			"responses": [],
+			"pathVariableData": [],
+			"queryParams": [],
+			"headerData": [],
+			"collection_id": "0bd42bc2-a55b-c1e3-bc75-958914d81f73",
+			"folder": "5c6751c4-6f4f-8b8c-f58c-08abd6e1a5cc"
+		},
+		{
+			"id": "81d79a53-c84d-a8d4-7d1c-41430fbb1acc",
+			"headers": "Content-Type: application/json\nAuthorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyIiwiaWF0IjoxNTczODM4ODUxLCJleHAiOjE1NzQ0NDM2NTF9.k9_WXe0qNMWVMAky3fXYU4N1Ft6AvNI3EjmDK0Zhld5nAnApHaObtJF_SMXUDJfRj3oxjj4a8UifCCBmsDWAEQ\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Authorization",
+					"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyIiwiaWF0IjoxNTczODM4ODUxLCJleHAiOjE1NzQ0NDM2NTF9.k9_WXe0qNMWVMAky3fXYU4N1Ft6AvNI3EjmDK0Zhld5nAnApHaObtJF_SMXUDJfRj3oxjj4a8UifCCBmsDWAEQ",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "localhost:8080/api/category/create",
+			"folder": "a843f04f-a97c-80d6-ea02-633fd97aded4",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1573840497317,
+			"name": "Category create",
+			"description": "",
+			"collectionId": "0bd42bc2-a55b-c1e3-bc75-958914d81f73",
+			"responses": [],
+			"rawModeData": "{\n\t\"name\" : \"Bệnh lý\",\n\t\"description\" : \"ngon vcl\",\n\t\"image\" : \"1\"\n}"
+		},
+		{
+			"id": "8b738645-123e-245e-4123-99600a85779e",
+			"name": "Schedule-combo Create",
+			"description": "",
+			"collectionId": "0bd42bc2-a55b-c1e3-bc75-958914d81f73",
+			"method": "POST",
+			"headers": "Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxIiwiaWF0IjoxNTcyODM5OTQ4LCJleHAiOjE1NzM0NDQ3NDh9.JcJK3JhHtZ93KDIv5TYsoMTjiD7oxRvBhZ5whP5Pn5cFYlJRMNPVv5Ub59zBTmJ7ebMrLUbY_c8ceiPupU9pPg\nContent-Type: application/json",
+			"dataMode": "raw",
+			"data": [],
+			"rawModeData": "{\n\t\"comboId\" : 1,\n\t\"scheduleId\" : 1,\n\t\"day\" : 1,\n\t\"type\" : 1\n}",
+			"url": "localhost:8080/api/schedule-combo/create",
+			"responses": [],
+			"pathVariableData": [],
+			"queryParams": [],
+			"headerData": [
+				{
+					"key": "Authorization",
+					"type": "text",
+					"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxIiwiaWF0IjoxNTcyODM5OTQ4LCJleHAiOjE1NzM0NDQ3NDh9.JcJK3JhHtZ93KDIv5TYsoMTjiD7oxRvBhZ5whP5Pn5cFYlJRMNPVv5Ub59zBTmJ7ebMrLUbY_c8ceiPupU9pPg"
+				},
+				{
+					"key": "Content-Type",
+					"name": "Content-Type",
+					"type": "text",
+					"value": "application/json"
+				}
+			],
+			"collection_id": "0bd42bc2-a55b-c1e3-bc75-958914d81f73",
+			"folder": "5c6751c4-6f4f-8b8c-f58c-08abd6e1a5cc"
+		},
+		{
+			"id": "97744f8c-2a09-6814-4227-f0bcd14a5a44",
+			"headers": "Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIzIiwiaWF0IjoxNTczMzA2MTMxLCJleHAiOjE1NzM5MTA5MzF9.RJDGUcq7IABb1mc8-UjzaJYO5zLpKl9XHxAKPhhlcMvN5PZKCBWmMKPrvQj3LW3D8bwCGtRsmdEzhzUudgfcXQ\n",
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIzIiwiaWF0IjoxNTczMzA2MTMxLCJleHAiOjE1NzM5MTA5MzF9.RJDGUcq7IABb1mc8-UjzaJYO5zLpKl9XHxAKPhhlcMvN5PZKCBWmMKPrvQj3LW3D8bwCGtRsmdEzhzUudgfcXQ",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "localhost:8080/api/order",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "GET",
+			"collectionId": "0bd42bc2-a55b-c1e3-bc75-958914d81f73",
+			"data": null,
+			"dataMode": "params",
+			"name": "Order by Auth",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1573307490360,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"folder": "e153b4f8-f678-f595-d9cc-43932ea388ed"
+		},
+		{
+			"id": "b4fcf0cd-e733-7616-505b-06916ddd516a",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "localhost:8080/api/auth/signin",
+			"folder": "ef500588-134e-66ea-71ac-f3f642ea14a9",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1573838848105,
+			"name": "Signin",
+			"description": "",
+			"collectionId": "0bd42bc2-a55b-c1e3-bc75-958914d81f73",
+			"responses": [],
+			"rawModeData": "{\n\t\"account\" : \"quyen196\",\n\t\"password\" : \"9876543210\"\n}"
+		},
+		{
+			"id": "b84a9a23-5907-5115-721e-62f80602c98a",
+			"name": "ScheduleCombo get by Schedule ",
+			"description": "",
+			"collectionId": "0bd42bc2-a55b-c1e3-bc75-958914d81f73",
+			"method": "GET",
+			"headers": "",
+			"data": [],
+			"rawModeData": "",
+			"url": "localhost:8080/api/schedule-combo/schedule/1",
+			"responses": [],
+			"pathVariableData": [],
+			"queryParams": [],
+			"headerData": [],
+			"collection_id": "0bd42bc2-a55b-c1e3-bc75-958914d81f73",
+			"folder": "5c6751c4-6f4f-8b8c-f58c-08abd6e1a5cc"
+		},
+		{
+			"id": "be543931-17b9-a034-09ba-beb93cdaeb6a",
+			"headers": "",
+			"headerData": [],
+			"url": "localhost:8080/api/user-profile/5",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "GET",
+			"collectionId": "0bd42bc2-a55b-c1e3-bc75-958914d81f73",
+			"data": null,
+			"dataMode": "params",
+			"name": "Get profile",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1573840534752,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"folder": "99b18dc0-b201-8f07-15cf-b6ddb56bdca7"
+		},
+		{
+			"id": "c33dd6ea-4c6d-ad7c-3a6e-83e170239c0c",
+			"name": "Schedule get list",
+			"description": "",
+			"collectionId": "0bd42bc2-a55b-c1e3-bc75-958914d81f73",
+			"method": "GET",
+			"headers": "",
+			"data": [],
+			"rawModeData": "",
+			"url": "localhost:8080/api/schedule/",
+			"responses": [],
+			"pathVariableData": [],
+			"queryParams": [],
+			"headerData": [],
+			"collection_id": "0bd42bc2-a55b-c1e3-bc75-958914d81f73",
+			"folder": "a7d9df61-198e-7cf3-367c-9e7e6b20c3c5"
+		},
+		{
+			"id": "d26c16bd-897c-8368-b26d-c26dfc1ecb19",
+			"name": "Schedule create",
+			"description": "",
+			"collectionId": "0bd42bc2-a55b-c1e3-bc75-958914d81f73",
+			"method": "POST",
+			"headers": "Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxIiwiaWF0IjoxNTcyODM5OTQ4LCJleHAiOjE1NzM0NDQ3NDh9.JcJK3JhHtZ93KDIv5TYsoMTjiD7oxRvBhZ5whP5Pn5cFYlJRMNPVv5Ub59zBTmJ7ebMrLUbY_c8ceiPupU9pPg\nContent-Type: application/json",
+			"dataMode": "raw",
+			"data": [],
+			"rawModeData": "{\n\t\"name\" : \"30 ngày thanh lọc\",\n\t\"description\" : \"NGon\",\n\t\"price\" : 3000,\n\t\"image\" : \"22\"\n}",
+			"url": "localhost:8080/api/schedule/create",
+			"responses": [],
+			"pathVariableData": [],
+			"queryParams": [],
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxIiwiaWF0IjoxNTcyODM5OTQ4LCJleHAiOjE1NzM0NDQ3NDh9.JcJK3JhHtZ93KDIv5TYsoMTjiD7oxRvBhZ5whP5Pn5cFYlJRMNPVv5Ub59zBTmJ7ebMrLUbY_c8ceiPupU9pPg",
+					"type": "text"
+				},
+				{
+					"key": "Content-Type",
+					"name": "Content-Type",
+					"value": "application/json",
+					"type": "text"
+				}
+			],
+			"collection_id": "0bd42bc2-a55b-c1e3-bc75-958914d81f73",
+			"folder": "a7d9df61-198e-7cf3-367c-9e7e6b20c3c5"
+		},
+		{
+			"id": "dd391011-4b88-51a6-c10e-0d64d63f6b25",
+			"headers": "Content-Type: application/json\nAuthorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxIiwiaWF0IjoxNTczNTgwOTUzLCJleHAiOjE1NzQxODU3NTN9.anoFfuVHocT-72ddk8S2qMeaj8DKVf6-8lRa8AaqPDwM-Sh4CwslJFfE1F9JV0kJqsX2Tz4Y5oNDT8txDhTwWw\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Authorization",
+					"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxIiwiaWF0IjoxNTczNTgwOTUzLCJleHAiOjE1NzQxODU3NTN9.anoFfuVHocT-72ddk8S2qMeaj8DKVf6-8lRa8AaqPDwM-Sh4CwslJFfE1F9JV0kJqsX2Tz4Y5oNDT8txDhTwWw",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "localhost:8080/api/user-profile/create",
+			"folder": "99b18dc0-b201-8f07-15cf-b6ddb56bdca7",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "PUT",
+			"data": [],
+			"dataMode": "raw",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1573840498334,
+			"name": "Store user profile",
+			"description": "",
+			"collectionId": "0bd42bc2-a55b-c1e3-bc75-958914d81f73",
+			"responses": [],
+			"rawModeData": "{\n\t\"height\" : 180,\n\t\"weight\" : 70,\n\t\"age\" : 20\n}"
+		},
+		{
+			"id": "e1156196-e72a-3577-c061-0e7c93bcc26d",
+			"headers": "Content-Type: application/json\nAuthorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIzIiwiaWF0IjoxNTczMzA2MTMxLCJleHAiOjE1NzM5MTA5MzF9.RJDGUcq7IABb1mc8-UjzaJYO5zLpKl9XHxAKPhhlcMvN5PZKCBWmMKPrvQj3LW3D8bwCGtRsmdEzhzUudgfcXQ\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Authorization",
+					"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIzIiwiaWF0IjoxNTczMzA2MTMxLCJleHAiOjE1NzM5MTA5MzF9.RJDGUcq7IABb1mc8-UjzaJYO5zLpKl9XHxAKPhhlcMvN5PZKCBWmMKPrvQj3LW3D8bwCGtRsmdEzhzUudgfcXQ",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "localhost:8080/api/order",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "POST",
+			"collectionId": "0bd42bc2-a55b-c1e3-bc75-958914d81f73",
+			"data": [],
+			"dataMode": "raw",
+			"name": "Order create",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1573307033760,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"folder": "e153b4f8-f678-f595-d9cc-43932ea388ed",
+			"rawModeData": "[\n\t{\n\t\t\"foodId\" : null,\n\t\t\"comboId\" : null,\n\t\t\"scheduleId\" : 1,\n\t\t\"quantity\" : 1,\n\t\t\"price\" : 300000\n\t},\n\t{\n\t\t\"foodId\" : null,\n\t\t\"comboId\" : 1,\n\t\t\"scheduleId\" : null,\n\t\t\"quantity\" : 1,\n\t\t\"price\" : 350000\n\t}\n]"
+		},
+		{
+			"id": "e737961a-fd66-c678-ac24-202381010b43",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "localhost:8080/api/auth/admin/signup",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "POST",
+			"collectionId": "0bd42bc2-a55b-c1e3-bc75-958914d81f73",
+			"data": [],
+			"dataMode": "raw",
+			"name": "Sign up Admin",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1573289804159,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"folder": "ef500588-134e-66ea-71ac-f3f642ea14a9",
+			"rawModeData": "{\n\t\"name\" : \"quyen196\",\n\t\"username\" : \"quyen196\",\n\t\"email\" : \"quyen196@gmail.com\",\n\t\"phone\" : \"0288044008\",\n\t\"password\" : \"9876543210\"\n}"
+		},
+		{
+			"id": "f3892c72-80c8-1d0d-efa4-cbeb882abd63",
+			"headers": "Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyIiwiaWF0IjoxNTc0MTYzOTAwLCJleHAiOjE1NzQ3Njg3MDB9.JzYnOzMlD0IkWCinzl3F-aH-ISg0dKDPR2Hc1cg2DjYQHVigEcpxd-1Dgcn1H2ZGhp-HWF3HvKGZlG83uM_4Dw\nContent-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyIiwiaWF0IjoxNTc0MTYzOTAwLCJleHAiOjE1NzQ3Njg3MDB9.JzYnOzMlD0IkWCinzl3F-aH-ISg0dKDPR2Hc1cg2DjYQHVigEcpxd-1Dgcn1H2ZGhp-HWF3HvKGZlG83uM_4Dw",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "localhost:9000/api/food/update/11",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "PUT",
+			"collectionId": "0bd42bc2-a55b-c1e3-bc75-958914d81f73",
+			"data": [],
+			"dataMode": "raw",
+			"name": "Food update",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1574186584316,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"folder": "03ef040a-df7a-18be-9e94-3b04d946b509",
+			"rawModeData": "{\n\t\"name\": \"Com rang thap cam 222\", \n\t\"description\" : \"ngon vv\",\n\t\"image\" : \"12\",\n\t\"price\" : 230,\n\t\"carbonhydrates\" : 230,\n\t\"protein\" : 1400,\n\t\"lipid\" : 230,\n\t\"xenluloza\" : 230,\n\t\"canxi\" : 230,\n\t\"iron\" : 230,\n\t\"zinc\" : 230,\n\t\"vitaminA\" : 230,\n\t\"vitaminB\" : 230,\n\t\"vitaminC\" : 230,\n\t\"vitaminD\" : 230,\n\t\"vitaminE\" : 230,\n\t\"cateId\" : [2],\n\t\"combos\" : [1]\n}"
+		},
+		{
+			"id": "fd43a240-5b37-f6cd-4aa6-2e17aca081bc",
+			"headers": "Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIzIiwiaWF0IjoxNTczMzA2MTMxLCJleHAiOjE1NzM5MTA5MzF9.RJDGUcq7IABb1mc8-UjzaJYO5zLpKl9XHxAKPhhlcMvN5PZKCBWmMKPrvQj3LW3D8bwCGtRsmdEzhzUudgfcXQ\n",
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIzIiwiaWF0IjoxNTczMzA2MTMxLCJleHAiOjE1NzM5MTA5MzF9.RJDGUcq7IABb1mc8-UjzaJYO5zLpKl9XHxAKPhhlcMvN5PZKCBWmMKPrvQj3LW3D8bwCGtRsmdEzhzUudgfcXQ",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "localhost:8080/api/order",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "GET",
+			"collectionId": "0bd42bc2-a55b-c1e3-bc75-958914d81f73",
+			"data": null,
+			"dataMode": "params",
+			"name": "Order get detail",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1573307526264,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"folder": "e153b4f8-f678-f595-d9cc-43932ea388ed"
+		}
+	]
+}

@@ -1,0 +1,86 @@
+<div class="breadcrumb-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="breadcrumb-wrap text-center">
+                    <nav aria-label="breadcrumb">
+                        <h2>Lịch Trình Ăn Uống</h2>
+                        <ul class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="/">Trang chủ</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Chi tiết lịch trình ăn uống</li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- breadcrumb area end -->
+
+<!-- compare main wrapper start -->
+<div class="compare-page-wrapper pt-60 pb-60">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <!-- Compare Page Content Start -->
+                <div class="compare-page-content-wrap">
+                    <div class="compare-table table-responsive">
+                        <table class="table table-bordered mb-0">
+                            <tbody>
+                                <tr>
+                                    <td class="first-column" width="20%">Ngày</td>
+                                    <td class="first-column" width="25%">
+                                        <p class="title ">Sáng</p>
+                                    </td>
+                                    <td class="first-column" width="25%">
+                                        <p class="title">Trưa</p>
+                                    </td>
+                                    <td class="first-column" width="25%">
+                                        <p class="title">Tối</p>
+                                    </td>
+                                    <td class="first-column" width="15%">
+                                        <p>Thêm vào giỏ hàng</p>
+                                    </td>
+                                </tr>
+                                <tr *ngFor="let schedule of dataGet">
+                                    <td class="first-column"> Day {{schedule?.day}}</td>
+                                    <td *ngFor="let schedule2 of schedule.data" class="pro-stock">
+                                        <a href="/c/{{util.generateURL(schedule2?.combo.name, schedule2?.combo.id)}}"
+                                            target="_blank">{{schedule2?.combo?.name}}</a>
+                                        <div>
+                                            <div
+                                                class="product-large-slider img-zoom mb-20 slider-arrow-style slider-arrow-style__style-2">
+                                                <div class="pro-large-img">
+                                                    <a href="/c/{{util.generateURL(schedule2?.combo.name, schedule2?.combo.id)}}"
+                                                        target="_blank"><img src="{{schedule2.combo.image}}"
+                                                            alt="{{schedule2?.combo?.name}}" /></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="action-link mb-20">
+                                            <a href="javascript:void(0)" (click)="addToCart(schedule.data)"
+                                                data-toggle="tooltip" title="Thêm vào giỏ hàng"><i class="ion-bag"></i></a>
+                                        </div>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <!-- Compare Page Content End -->
+                <!-- <div class="paginatoin-area text-center mt-30">
+                    <ul class="pagination-box">
+                        <li><a class="Previous" href="javascript:void(0)"><i class="ion-ios-arrow-left"></i></a></li>
+                        <li class="active"><a href="javascript:void(0)">1</a></li>
+                        <li><a href="javascript:void(0)">2</a></li>
+                        <li><a href="javascript:void(0)">3</a></li>
+                        <li><a class="Next" href="javascript:void(0)"><i class="ion-ios-arrow-right"></i></a></li>
+                    </ul>
+                </div> -->
+            </div>
+        </div>
+    </div>
+</div>

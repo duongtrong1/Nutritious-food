@@ -1,0 +1,23 @@
+.loadcontent {
+    width: 100%;
+    text-align: center
+}
+
+.product-thumb {
+    width: 100%;
+    height: 15rem
+}
+
+.product-thumb img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover
+}
+
+.total-price {
+    color: #ee2347;
+}
+
+.compare-page-content-wrap .text-success {
+    font-weight: bold!important;
+}

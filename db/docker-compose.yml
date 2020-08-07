@@ -1,0 +1,22 @@
+version: '3'
+
+services:
+
+  mysql-server:
+    image: mysql:8.0.21
+    container_name: mysql-server
+    command: --max_connections=1000
+    environment:
+      - MYSQL_ROOT_PASSWORD=smartosc123
+      - MYSQL_USER=nutritious
+      - MYSQL_PASSWORD=abcd@1234
+      - MYSQL_DATABASE=nutritious_food
+    ports:
+      - 4306:3306
+    volumes:
+      - mysql_volume:/var/lib/mysql
+    restart: always
+
+volumes:
+  mysql_volume:
+    driver: local

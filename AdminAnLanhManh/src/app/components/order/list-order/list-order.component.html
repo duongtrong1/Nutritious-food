@@ -1,0 +1,205 @@
+<div class="contact-wrapper contact-wrapper-two">
+    <div class="contact-sidebar">
+        <div class="contact-sidebar-header">
+            <i data-feather="search"></i>
+            <div class="search-form">
+                <input type="number" #code (keyup.enter)="searchOrder(code.value, false)" class="form-control"
+                    placeholder="Tìm đơn hàng theo code">
+            </div>
+        </div><!-- contact-sidebar-header -->
+        <div class="contact-sidebar-body">
+            <div class="tab-content">
+                <div class="tab-pane fade active show no-data" *ngIf="orderList.length == 0">
+                    Không có dữ liệu
+                </div>
+                <div class="tab-pane fade active show" *ngIf="orderList.length > 0">
+                    <div class="pd-y-20 pd-x-10 contact-list">
+                        <div *ngFor="let item of orderList"
+                            class="media {{(orderDetail?.id == item.id) ? 'active' : ''}}" (click)="chooseOrder(item)">
+                            <div class="avatar avatar-sm avatar-online"><span
+                                    class="avatar-initial rounded-circle bg-gray-700">{{item?.userName.charAt(0)}}</span>
+                            </div>
+                            <div class="media-body mg-l-10">
+                                <h6 class="tx-13 mg-b-3">{{item?.userName}} #{{item?.code}}</h6>
+                                <span class="tx-12">{{item?.address}}</span>
+                            </div><!-- media-body -->
+                            <nav>
+                                <a href=""><i data-feather="star"></i></a>
+                                <a href=""><i data-feather="edit-2"></i></a>
+                            </nav>
+                        </div><!-- media -->
+                    </div><!-- contact-list -->
+                </div><!-- tab-pane -->
+            </div><!-- tab-content -->
+        </div><!-- contact-sidebar-body -->
+    </div><!-- contact-sidebar -->
+
+    <div class="contact-content">
+        <div class="contact-content-header">
+            <nav class="nav">
+                <a href="#order" #other class="nav-link active" data-toggle="tab">Đơn Hàng
+                    {{(orderDetail?.code) ? '#' + orderDetail?.code : ''}}</a>
+                <a href="#salesReport" class="nav-link" data-toggle="tab">Báo Cáo Doanh Thu</a>
+            </nav>
+        </div><!-- contact-content-header -->
+
+        <div class="contact-content-body">
+            <div class="tab-content">
+                <div id="order" class="tab-pane show active pd-20 pd-xl-25">
+                    <div class="no-data" *ngIf="orderDetail == null">
+                        Vui lòng chọn một đơn hàng để xem.
+                    </div>
+                    <div *ngIf="orderDetail">
+                        <div class="d-flex align-items-center justify-content-between mg-b-25">
+                            <h6 class="mg-b-0">Thông tin nhận hàng</h6>
+                            <div class="d-flex">
+                                <a href="javascript:void(0)" (click)="orderDetail = null"
+                                    class="btn btn-sm btn-white d-flex align-items-center mg-r-5"><i
+                                        data-feather="edit-2"></i><span class="d-none d-sm-inline mg-l-5">
+                                        Đóng</span></a>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-6 col-sm">
+                                <label class="tx-10 tx-medium tx-spacing-1 tx-color-03 tx-uppercase tx-sans mg-b-10">Tài
+                                    khoản</label>
+                                <p class="mg-b-0">{{orderDetail?.userName}}</p>
+                            </div><!-- col -->
+                            <div class="col-6 col-sm">
+                                <label class="tx-10 tx-medium tx-spacing-1 tx-color-03 tx-uppercase tx-sans mg-b-10">Địa
+                                    chỉ</label>
+                                <p class="mg-b-0">{{orderDetail?.address}}</p>
+                            </div><!-- col -->
+                            <div class="col-sm mg-t-20 mg-sm-t-0">
+                                <label class="tx-10 tx-medium tx-spacing-1 tx-color-03 tx-uppercase tx-sans mg-b-10">Số
+                                    điện
+                                    thoại</label>
+                                <p class="mg-b-0">{{orderDetail?.phone}}</p>
+                            </div><!-- col -->
+                        </div><!-- row -->
+
+                        <h6 class="mg-t-40 mg-b-20">Thông tin đơn hàng</h6>
+
+                        <div class="row row-sm">
+                            <div class="table-responsive">
+                                <table class="table table-bordered mg-b-0">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col" width="5%">ID</th>
+                                            <th scope="col" width="35%">Tên</th>
+                                            <th scope="col" width="45%">Mô Tả</th>
+                                            <th scope="col" width="15%">Giá Tiền</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr *ngFor="let item of orderDetail?.orderDetail">
+                                            <th scope="row">{{item.id}}</th>
+                                            <td><a href="{{(item?.food) ? client_url + '/p/' + util.generateURL(item?.food.name, item?.food.id) : client_url + '/c/' + util.generateURL(item?.combo.name, item?.combo.id)}}"
+                                                    target="_blank">{{(item?.food) ? item?.food.name : item?.combo.name}}</a>
+                                            </td>
+                                            <td>{{(item?.food) ? item?.food.description : item?.combo.description}}</td>
+                                            <td>{{util.formatPrice((item?.food) ? item?.food.price : item?.combo.price)}}
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div><!-- table-responsive -->
+                        </div><!-- row -->
+
+                        <h6 class="mg-t-40 mg-b-20">Trạng Thái Đơn Hàng</h6>
+
+                        <div [innerHTML]="getStatus(orderDetail?.status)">
+
+                        </div>
+
+                        <p>Tổng tiền: <strong>{{util.formatPrice(orderDetail.totalPrice)}}</strong></p>
+
+                        <button class="btn btn-success" *ngIf="orderDetail?.status &lt; 3"
+                            (click)="confirmOrder(orderDetail)">Xác Nhận Giao Hàng</button>
+
+                        <button class="btn btn-success" *ngIf="orderDetail?.status &gt; 2 && orderDetail?.status &lt; 4"
+                            (click)="shipSuccess(orderDetail)">Giao Hàng Thành Công</button>
+
+                        <button class="btn btn-danger mg-l-10" *ngIf="orderDetail?.status &gt; 2 && orderDetail?.status &lt; 4"
+                            (click)="rejectOrder(orderDetail)">Giao Hàng Thất Bại</button>
+                    </div>
+                </div>
+
+                <div id="salesReport" class="tab-pane pd-20 pd-xl-25">
+
+                    <h5 class="mg-t-10 mg-b-20">Báo cáo doanh thu theo thời gian</h5>
+
+                    <div class="d-flex align-items-center justify-content-between row">
+                        <div class="col-6">
+                            <label for="from">Từ ngày</label>
+                            <input type="text" class="form-control" #from placeholder="Chọn ngày bắt đầu" id="from">
+                        </div>
+                        <div class="col-6">
+                            <label for="to">Đến ngày</label>
+                            <input type="text" class="form-control" #to placeholder="Chọn ngày kết thúc" id="to">
+                        </div>
+                        <div class="col-12">
+                            <button class="btn btn-success mg-t-15" (click)="getReport(from.value, to.value)">Báo
+                                Cáo</button>
+                            <div class="spinner-border pos-absolute mg-l-5 mg-t-15" role="status" *ngIf="isLoading">
+                                <span class="sr-only">Loading...</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div *ngIf="dataDate != null" class="mg-t-20">
+                        <h5 class="mg-t-10 mg-b-20">Báo cáo doanh thu từ ngày {{dataDate.from}} đến ngày {{dataDate.to}}
+                        </h5>
+
+                        <ul>
+                            <li class="text-success">{{dataStatusReport?.success}} đơn hàng thành công</li>
+                            <li class="text-danger">{{dataStatusReport?.reject}} đơn hàng thất bại</li>
+                            <li class="text-warning">{{dataStatusReport?.other}} khác</li>
+                        </ul>
+
+                        <p>Tổng có <strong>{{salesReport.length}}</strong> đơn hàng, thu lại
+                            <strong>{{util.formatPrice(util.getTotalPrice(salesReport))}}</strong></p>
+                    </div>
+
+                </div><!-- tab-pane -->
+            </div><!-- tab-content -->
+        </div><!-- contact-content-body -->
+
+        <div class="contact-content-sidebar">
+            <div class="clearfix mg-b-25">
+                <div id="contactAvatar" class="pos-relative float-left">
+                    <div class="avatar avatar-xl"><span
+                            class="avatar-initial rounded-circle bg-gray-700 tx-normal">A</span></div>
+                    <a href="" class="contact-edit-photo" data-toggle="tooltip" title="Upload Photo"><i
+                            data-feather="edit-2"></i></a>
+                </div>
+            </div>
+            <h5 id="contactName" class="tx-18 tx-xl-20 mg-b-5">Abigail Johnson</h5>
+            <p class="tx-13 tx-lg-12 tx-xl-13 tx-color-03 mg-b-20">President &amp; CEO - ThemePixels, Inc.</p>
+            <nav class="contact-call-nav mg-b-20">
+                <a href="#" class="nav-call" data-toggle="tooltip" title="Make a Phone Call"><i
+                        data-feather="phone"></i></a>
+                <a href="#" class="nav-video" data-toggle="tooltip" title="Make a Video Call"><i
+                        data-feather="video"></i></a>
+                <a href="#" class="nav-msg" data-toggle="tooltip" title="Send Message"><i
+                        data-feather="message-square"></i></a>
+            </nav><!-- contact-call-nav -->
+
+            <label class="tx-10 tx-medium tx-spacing-1 tx-color-03 tx-uppercase tx-sans mg-b-10">Biography</label>
+            <p class="tx-13 mg-b-0">Gambler, Tea Drinker, Ultimate Piggie, Replacement President of a Major Soft Drink
+                Manufacturer. When I give out candies, I give people the flavour I don't like. </p>
+
+            <hr class="mg-y-20">
+
+            <label class="tx-10 tx-medium tx-spacing-1 tx-color-03 tx-uppercase tx-sans mg-b-15">Options</label>
+            <nav class="nav flex-column contact-content-nav mg-b-25">
+                <a href="" class="nav-link"><i data-feather="share"></i> Share this Contact</a>
+                <a href="" class="nav-link"><i data-feather="star"></i> Add to Favorites</a>
+                <a href="" class="nav-link"><i data-feather="slash"></i> Block this Contact</a>
+            </nav>
+
+        </div><!-- contact-content-sidebar -->
+    </div><!-- contact-content -->
+
+</div><!-- contact-wrapper -->

@@ -1,0 +1,81 @@
+<div class="login-register-wrapper pt-60 pb-60">
+  <div class="container">
+    <div class="member-area-from-wrap">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="login-reg-form-wrap mt-md-60 mt-sm-60">
+            <h2>Đăng Ký</h2>
+            <form [formGroup]="registerForm"> 
+              <div class="single-input-item">
+                <input type="text" formControlName="name" placeholder="Tên của bạn" #name [ngClass]="{'is-invalid': submitted && registerForm.controls.name.errors}"/>
+                <div *ngIf="submitted && registerForm.controls.name.errors" class="text-danger">
+                  <div *ngIf="registerForm.controls.name.errors.required">Tên của bạn không được để trống</div>
+                  <div *ngIf="registerForm.controls.name.errors.minlength">Tên của bạn phải lớn hơn 6 kí tự</div>
+                  <div *ngIf="registerForm.controls.name.errors.maxlength">Tên tối đa 40 kí tự</div>
+                </div>
+              </div>
+              
+              <div class="single-input-item">
+                <input type="text" formControlName="username" placeholder="Tên người dùng" #username [ngClass]="{'is-invalid': submitted && registerForm.controls.username.errors}"/>
+                <div *ngIf="submitted && registerForm.controls.username.errors" class="text-danger">
+                  <div *ngIf="registerForm.controls.username.errors.required">Tên người dùng không được để trống!</div>
+                  <div *ngIf="registerForm.controls.username.errors.minlength">Tên người dùng không được ít hơn 6 kí tự!</div>
+                  <div *ngIf="registerForm.controls.username.errors.maxlength">Tên người dùng không được lớn hơn 15 kí tự</div>
+                </div>
+              </div>
+
+              <div class="single-input-item">
+                <input type="email" formControlName="email" placeholder="Email" #email [ngClass]="{'is-invalid': submitted && registerForm.controls.email.errors}"/>
+                <div *ngIf="submitted && registerForm.controls.email.errors" class="text-danger">
+                    <div *ngIf="registerForm.controls.email.errors.required">Email không được để trống!</div>
+                    <div *ngIf="registerForm.controls.email.errors.email">Email không hợp lệ</div>
+                  </div>
+              </div>
+
+              <div class="row">
+                <div class="col-lg-6">
+                  <div class="single-input-item">
+                    <input type="password" formControlName="password" placeholder="Mật khẩu" #password [ngClass]="{'is-invalid': submitted && registerForm.controls.password.errors}" />
+                    <div *ngIf="submitted && registerForm.controls.password.errors" class="text-danger">
+                      <div *ngIf="registerForm.controls.password.errors.required">Mật khẩu không được để trống!</div>
+                      <div *ngIf="registerForm.controls.password.errors.minlength">Mật khẩu không được ít hơn 6 kí tự!</div>
+                      <div *ngIf="registerForm.controls.password.errors.maxlength">Mật khẩu tối đa 100 kí tự!</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="single-input-item">
+                        <input type="password" formControlName="confirmPassword" placeholder="Nhập lại mật khẩu" [ngClass]="{ 'is-invalid': submitted && registerForm.controls.confirmPassword.errors}" appConfirmEqualValidator='password'/>
+                        <div *ngIf="submitted && registerForm.controls.confirmPassword.errors" class="text-danger">
+                          <div *ngIf="registerForm.controls.confirmPassword.errors.required"> Nhập lại mật khẩu không được để trống!</div>
+                          <div *ngIf="registerForm.controls.confirmPassword.errors?.notEqual">Mật khẩu không khớp!</div>
+                        </div>
+                    </div>
+                </div>
+              </div>
+              <div>
+                <div class="single-input-item">
+                  <input type="phone" formControlName="phone" placeholder="Số điện thoại" #phone [ngClass]="{'is-invalid': submitted && registerForm.controls.phone.errors}" />
+                  <div *ngIf="submitted && registerForm.controls.phone.errors" class="text-danger">
+                    <div *ngIf="registerForm.controls.phone.errors.required">Số điện thoại không được để trống!</div>
+                    <div *ngIf="registerForm.controls.phone.errors.pattern">Số điện thoại không hợp lệ!</div>
+                  </div>
+                </div>
+              </div>
+              <div class="single-input-item">
+                <a href="/login" class="forget-pwd">Bạn đã có tài khoản? Đặng nhập tại đây!</a>
+              </div>
+              <div style="margin-top: 10px">
+                <span class="textError">{{textError}}</span>
+              </div>
+              <div class="single-input-item">
+                <button  type="button" class="btn btn__bg btn__sqr" (click)="handleRegister(name.value,username.value,email.value,password.value,phone.value)">
+                  Đăng Ký</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

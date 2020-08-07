@@ -1,0 +1,24 @@
+pipeline {
+
+     agent any
+
+     stages {
+          stage("Checkout") {
+               steps {
+                    git url: 'https://github.com/duongtrong1/Project-Sem-4.git'
+               }
+          }
+
+          stage("mvn Package") {
+                steps {
+                    sh 'mvn clean package'
+                }
+          }
+
+          stage("Docker build") {
+                steps {
+                    sh 'docker build -t nutritious-food:latest .'
+                }
+          }
+     }
+}

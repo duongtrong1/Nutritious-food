@@ -1,0 +1,41 @@
+version: '3'
+
+
+services:
+
+  nutritious-food:
+    image: nutritious-food:latest
+    container_name: nutritious-food-server
+    ports:
+      - 9000:9000
+    restart: always
+    networks:
+      - backend
+  
+  adminanlanhmanh:
+    image: adminanlanhmanh:latest
+    container_name: nutritious-admin
+    ports:
+      - 5200:4200
+    environment:
+      - BUILD_ENV=production
+    restart: always
+    networks:
+      - web
+  
+  anlanhmanh:
+    image: anlanhmanh:latest
+    container_name: nutritious-an-lanh-manh
+    ports:
+      - 4200:4200
+    environment:
+      - BUILD_ENV=production
+    restart: always
+    networks:
+      - web
+
+networks:
+  web:
+    driver: bridge
+  backend:
+    driver: bridge

@@ -1,0 +1,33 @@
+.orderPage h2 {
+    margin-top: 30px;
+}
+
+.checkout-billing-details-wrap h2 {
+    margin-top: 30px;
+}
+
+.billing-form-wrap form {
+    margin-left: 20px;
+}
+
+.nice-select {
+    width: 100%;
+    border-radius: 0;
+    height: 48px;
+    border-color: #ccc;
+    background-color: #f7f7f7;
+}
+
+.order-summary-table .table tr td a, .order-summary-table .table tr th a, .order-summary-table table tr td a, .order-summary-table table tr th a {
+    color: #007ff0;
+}
+
+.error {
+    color: red;
+}
+
+.title {
+    margin-top: 25px;
+    font-weight: 500;
+    font-size: 16px;
+}

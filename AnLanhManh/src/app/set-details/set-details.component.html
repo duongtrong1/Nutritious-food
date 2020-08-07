@@ -1,0 +1,236 @@
+<!-- breadcrumb area start -->
+<div class="breadcrumb-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="breadcrumb-wrap text-center">
+                    <nav aria-label="breadcrumb">
+                        <h2>Set Đồ Ăn Dinh Dưỡng</h2>
+                        <ul class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="/">Trang chủ</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">{{dataCombo?.name}}</li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- breadcrumb area end -->
+
+<!-- page main wrapper start -->
+<div class="product-details-wrapper pt-60 pb-60">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="vertical-slider flex-row-reverse">
+                    <div class="vertical-first">
+                        <div class="product-large-slider2">
+                            <div class="pro-large-img">
+                                <img [src]="productImage" alt="" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="vertical-second">
+                        <div class="pro-nav2 slick-arrow-style" *ngFor="let food of listProduct">
+                            <div class="pro-nav-thumb quick-view-link">
+                                <a href="javascript:void(0)" (click)="openQuickView(food)">
+                                    <img data-toggle="tooltip" [title]="food.name" [src]="food?.image" alt="" />
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="product-details-des">
+                    <div class="product-content-list">
+                        <div class="ratings">
+                            <span><i class="ion-android-star"></i></span>
+                            <span><i class="ion-android-star"></i></span>
+                            <span><i class="ion-android-star"></i></span>
+                            <span><i class="ion-android-star"></i></span>
+                            <span><i class="ion-android-star"></i></span>
+                        </div>
+                        <div class="product-name">
+                            <h4><a href="javascript:void(0)">{{dataCombo?.name}}</a></h4>
+                        </div>
+                        <div class="price-box">
+                            <span class="regular-price">{{util.formatPrice(dataCombo?.price)}}</span>
+                        </div>
+                        <p>{{dataCombo?.description}}</p>
+                        <div class="action-link mb-20">
+                            <a href="javascript:void(0)" data-toggle="tooltip" title="Thêm"
+                                (click)="addToCart(dataCombo)" class="add-to-cart">Thêm vào
+                                giỏ hàng</a>
+                            <!-- <a href="javascript:void(0)" data-toggle="tooltip" title="Yêu thích"><i
+                                    class="ion-android-favorite-outline"></i></a> -->
+                            <a href="/compare?id={{dataCombo?.id}}&type=combo" data-toggle="tooltip" title="So sánh"><i
+                                    class="ion-ios-shuffle"></i></a>
+                        </div>
+                        <div class="share-icon">
+                            <h5>Chia Sẻ:</h5>
+                            <div class="addthis_inline_share_toolbox_5izj"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- product details inner end -->
+        <div class="product-details-inner" *ngIf="quickViewData != null">
+            <button type="button" class="close-quick-view btn" (click)="quickViewData = null">Đóng</button>
+            <div class="row">
+                <div class="col-lg-5 col-md-6">
+                    <div class="pro-nav slick-padding_2 slider-arrow-style slider-arrow-style__style-2">
+                        <div class="pro-nav-thumb"><img [src]="quickViewData?.image" /></div>
+                    </div>
+                </div>
+                <div class="col-lg-7 col-md-6">
+                    <div class="product-details-des">
+                        <div class="product-content-list">
+                            <div class="ratings">
+                                <span><i class="ion-android-star"></i></span>
+                                <span><i class="ion-android-star"></i></span>
+                                <span><i class="ion-android-star"></i></span>
+                                <span><i class="ion-android-star"></i></span>
+                                <span><i class="ion-android-star"></i></span>
+                            </div>
+                            <div class="product-name">
+                                <h4><a
+                                        href="/p/{{util.generateURL(quickViewData?.name, quickViewData?.id)}}">{{quickViewData?.name}}</a>
+                                </h4>
+                            </div>
+                            <div class="price-box">
+                                <span class="regular-price">{{util.formatPrice(quickViewData?.price)}}</span>
+                            </div>
+                            <p>{{quickViewData?.description}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- product details inner end -->
+        <div class="row">
+            <div class="col-lg-12">
+
+                <div class="myaccount-table table-responsive text-center">
+                    <br>
+                    <br>
+                    <h3>Hàm lượng dinh dưỡng trong combo đồ ăn</h3>
+                    <table class="table table-bordered">
+                        <thead class="thead-light">
+                            <tr>
+                                <th>Calorie</th>
+                                <th>Trọng lượng</th>
+                                <th>Chất bột đường (carbonhydrates)</th>
+                                <th>Chất đạm (protein)</th>
+                                <th>Độ béo (lipid)</th>
+                                <th>Chất xơ (cellulose)</th>
+                                <th>Canxi</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>{{dataCombo?.calorie}} calo</td>
+                                <td>{{dataCombo?.weight}} g</td>
+                                <td>{{dataCombo?.carbonhydrates}} g</td>
+                                <td>{{dataCombo?.protein}} g</td>
+                                <td>{{dataCombo?.lipid}} g</td>
+                                <td>{{dataCombo?.xenluloza}} g</td>
+                                <td>{{dataCombo?.canxi}} g</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-bordered">
+                        <thead class="thead-light">
+                            <tr>
+                                <th>vitamin A</th>
+                                <th>Vitamin B</th>
+                                <th>Vitamin C</th>
+                                <th>Vitamin D</th>
+                                <th>Vitamin E</th>
+                                <th>Sắt</th>
+                                <th>Kẽm</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>{{dataCombo?.vitaminA}} g</td>
+                                <td>{{dataCombo?.vitaminB}} g</td>
+                                <td>{{dataCombo?.vitaminC}} g</td>
+                                <td>{{dataCombo?.vitaminD}} g</td>
+                                <td>{{dataCombo?.vitaminE}} g</td>
+                                <td>{{dataCombo?.iron}} g</td>
+                                <td>{{dataCombo?.zinc}} g</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="col-lg-12">
+                <label class="title-main">Đánh Giá</label>
+                <div class="box_content">
+                    <div class="fb-comments" data-width="100%" data-numposts="20"></div>
+                </div>
+                <div id="fb-root"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- page main wrapper end -->
+
+<!-- related product area start -->
+<section class="related-product pb-30">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="section-title text-center">
+                    <h2>Combo Liên Quan</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row related-product-active slick-arrow-style">
+            <div *ngFor="let item of dataCombo2" class="col-3">
+                <div class="product-item mb-50">
+                    <div class="product-thumb">
+                        <a href="/c/{{util.generateURL(item?.name, item?.id)}}">
+                            <img [src]="item?.image" alt="">
+                        </a>
+                        <div class="quick-view-link">
+                            <a href="/c/{{util.generateURL(item?.name, item?.id)}}"> <span data-toggle="tooltip"
+                                    title="Xem chi tiết"><i class="ion-ios-eye-outline"></i></span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="product-content text-center">
+                        <div class="ratings">
+                            <span><i class="ion-android-star"></i></span>
+                            <span><i class="ion-android-star"></i></span>
+                            <span><i class="ion-android-star"></i></span>
+                            <span><i class="ion-android-star"></i></span>
+                            <span><i class="ion-android-star"></i></span>
+                        </div>
+                        <div class="product-name">
+                            <h4 class="h5 itemName">
+                                <a href="product-details.html">{{item?.name}}</a>
+                            </h4>
+                        </div>
+                        <div class="price-box">
+                            <span class="regular-price">{{util.formatPrice(item?.price)}}</span>
+                            <span class="old-price"><del></del></span>
+                        </div>
+                        <div class="product-action-link">
+                            <a href="javascript:void(0)" data-toggle="tooltip" title="Yêu thích"><i
+                                    class="ion-android-favorite-outline"></i></a>
+                            <a href="javascript:void(0)" data-toggle="tooltip" (click)="addToCart(item)"
+                                title="Thêm vào giỏ hàng"><i class="ion-bag"></i></a>
+                            <a href="/compare?id={{item?.id}}&type=combo" data-toggle="tooltip" title="So sánh"><i
+                                    class="ion-ios-shuffle"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- related product area end -->

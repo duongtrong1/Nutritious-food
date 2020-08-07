@@ -1,0 +1,171 @@
+<!-- compare main wrapper end -->
+
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal" style="display: none;"
+    #openModal>
+    Open modal
+</button>
+
+<!-- The Modal -->
+<div class="modal" id="myModal" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" #closeModal
+                    style="display: none;">&times;</button>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body">
+                <h5>Chọn {{(type == 'food') ? 'món ăn' : 'set đồ ăn'}} mà bạn muốn so sánh</h5>
+                <div class="form-group">
+                    <select class="form-control" #second id="second" name="second">
+                        <option *ngFor="let item of listData" [value]="item?.id">{{item?.name}}</option>
+                    </select>
+                </div>
+                <button type="button" (click)="compare(second.value)" class="btn">So Sánh</button>
+                <div class="spinner-border" *ngIf="isLoading"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- breadcrumb area start -->
+<div class="breadcrumb-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="breadcrumb-wrap text-center">
+                    <nav aria-label="breadcrumb">
+                        <h2>{{(type == 'food') ? 'So Sánh Đồ Ăn Dinh Dưỡng' : 'So Sánh Set Ăn Dinh Dưỡng'}}</h2>
+                        <ul class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="/">Trang Chủ</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">So Sánh Sản Phẩm</li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- breadcrumb area end -->
+
+<!-- compare main wrapper start -->
+<div class="compare-page-wrapper pt-60 pb-60">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <!-- Compare Page Content Start -->
+                <div class="compare-page-content-wrap">
+                    <div class="compare-table table-responsive">
+                        <table class="table table-bordered mb-0">
+                            <tbody>
+                                <tr>
+                                    <td class="first-column">Sản Phẩm</td>
+                                    <td class="product-image-title">
+                                        <a href="{{(type == 'food') ? '/p/' + util.generateURL(firstProduct?.name, firstProduct?.id) : '/c/' + util.generateURL(firstProduct?.name, firstProduct?.id)}}"
+                                            class="image" target="_blank">
+                                            <img class="img-fluid" [src]="firstProduct?.image" alt="So sánh sản phẩm">
+                                        </a>
+                                        <a href="{{(type == 'food') ? '/p/' + util.generateURL(firstProduct?.name, firstProduct?.id) : '/c/' + util.generateURL(firstProduct?.name, firstProduct?.id)}}"
+                                            class="title" target="_blank">{{firstProduct?.name}}</a>
+                                    </td>
+                                    <td class="product-image-title">
+                                        <a href="{{(type == 'food') ? '/p/' + util.generateURL(secondProduct?.name, secondProduct?.id) : '/c/' + util.generateURL(secondProduct?.name, secondProduct?.id)}}"
+                                            class="image" target="_blank">
+                                            <img class="img-fluid" [src]="secondProduct?.image" alt="So sánh sản phẩm">
+                                        </a>
+                                        <a href="{{(type == 'food') ? '/p/' + util.generateURL(secondProduct?.name, secondProduct?.id) : '/c/' + util.generateURL(secondProduct?.name, secondProduct?.id)}}"
+                                            class="title" target="_blank">{{secondProduct?.name}}</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="first-column">Giá Tiền</td>
+                                    <td class="pro-price">{{util.formatPrice(firstProduct?.price)}}</td>
+                                    <td class="pro-price">{{util.formatPrice(secondProduct?.price)}}</td>
+                                </tr>
+                                <tr>
+                                    <td class="first-column">Calorie</td>
+                                    <td class="pro-color {{(firstProduct?.calorie > secondProduct?.calorie) ? 'text-success' : ''}}">{{firstProduct?.calorie}} calo</td>
+                                    <td class="pro-color {{(secondProduct?.calorie > firstProduct?.calorie) ? 'text-success' : ''}}">{{secondProduct?.calorie}} calo</td>
+                                </tr>
+                                <tr>
+                                    <td class="first-column">Trọng lượng</td>
+                                    <td class="pro-stock {{(firstProduct?.weight > secondProduct?.weight) ? 'text-success' : ''}}">{{firstProduct?.weight}} g</td>
+                                    <td class="pro-stock {{(secondProduct?.weight > firstProduct?.weight) ? 'text-success' : ''}}">{{secondProduct?.weight}} g</td>
+                                </tr>
+                                <tr>
+                                    <td class="first-column">Chất bột đường (carbonhydrates)</td>
+                                    <td class="pro-stock {{(firstProduct?.carbonhydrates > secondProduct?.carbonhydrates) ? 'text-success' : ''}}">{{firstProduct?.carbonhydrates}} g</td>
+                                    <td class="pro-stock {{(secondProduct?.carbonhydrates > firstProduct?.carbonhydrates) ? 'text-success' : ''}}">{{secondProduct?.carbonhydrates}} g</td>
+                                </tr>
+                                <tr>
+                                    <td class="first-column">Chất đạm (protein)</td>
+                                    <td class="pro-stock {{(firstProduct?.protein > secondProduct?.protein) ? 'text-success' : ''}}">{{firstProduct?.protein}} g</td>
+                                    <td class="pro-stock {{(secondProduct?.protein > firstProduct?.protein) ? 'text-success' : ''}}">{{secondProduct?.protein}} g</td>
+                                </tr>
+                                <tr>
+                                    <td class="first-column">Độ béo (lipid)</td>
+                                    <td class="pro-stock {{(firstProduct?.lipid > secondProduct?.lipid) ? 'text-success' : ''}}">{{firstProduct?.lipid}} g</td>
+                                    <td class="pro-stock {{(secondProduct?.lipid > firstProduct?.lipid) ? 'text-success' : ''}}">{{secondProduct?.lipid}} g</td>
+                                </tr>
+                                <tr>
+                                    <td class="first-column">Chất xơ (cellulose)</td>
+                                    <td class="pro-stock {{(firstProduct?.xenluloza > secondProduct?.xenluloza) ? 'text-success' : ''}}">{{firstProduct?.xenluloza}} g</td>
+                                    <td class="pro-stock {{(secondProduct?.xenluloza > firstProduct?.xenluloza) ? 'text-success' : ''}}">{{secondProduct?.xenluloza}} g</td>
+                                </tr>
+                                <tr>
+                                    <td class="first-column">Canxi</td>
+                                    <td class="pro-stock {{(firstProduct?.canxi > secondProduct?.canxi) ? 'text-success' : ''}}">{{firstProduct?.canxi}} g</td>
+                                    <td class="pro-stock {{(secondProduct?.canxi > firstProduct?.canxi) ? 'text-success' : ''}}">{{secondProduct?.canxi}} g</td>
+                                </tr>
+                                <tr>
+                                    <td class="first-column">Vitamin A</td>
+                                    <td class="pro-stock {{(firstProduct?.vitaminA > secondProduct?.vitaminA) ? 'text-success' : ''}}">{{firstProduct?.vitaminA}} g</td>
+                                    <td class="pro-stock {{(secondProduct?.vitaminA > firstProduct?.vitaminA) ? 'text-success' : ''}}">{{secondProduct?.vitaminA}} g</td>
+                                </tr>
+                                <tr>
+                                    <td class="first-column">Vitamin B</td>
+                                    <td class="pro-stock {{(firstProduct?.vitaminB > secondProduct?.vitaminB) ? 'text-success' : ''}}">{{firstProduct?.vitaminB}} g</td>
+                                    <td class="pro-stock {{(secondProduct?.vitaminB > firstProduct?.vitaminB) ? 'text-success' : ''}}">{{secondProduct?.vitaminB}} g</td>
+                                </tr>
+                                <tr>
+                                    <td class="first-column">Vitamin C</td>
+                                    <td class="pro-stock {{(firstProduct?.vitaminC > secondProduct?.vitaminC) ? 'text-success' : ''}}">{{firstProduct?.vitaminC}} g</td>
+                                    <td class="pro-stock {{(secondProduct?.vitaminC > firstProduct?.vitaminC) ? 'text-success' : ''}}">{{secondProduct?.vitaminC}} g</td>
+                                </tr>
+                                <tr>
+                                    <td class="first-column">Vitamin D</td>
+                                    <td class="pro-stock {{(firstProduct?.vitaminD > secondProduct?.vitaminD) ? 'text-success' : ''}}">{{firstProduct?.vitaminD}} g</td>
+                                    <td class="pro-stock {{(secondProduct?.vitaminD > firstProduct?.vitaminD) ? 'text-success' : ''}}">{{secondProduct?.vitaminD}} g</td>
+                                </tr>
+                                <tr>
+                                    <td class="first-column">Vitamin E</td>
+                                    <td class="pro-stock {{(firstProduct?.vitaminE > secondProduct?.vitaminE) ? 'text-success' : ''}}">{{firstProduct?.vitaminE}} g</td>
+                                    <td class="pro-stock {{(secondProduct?.vitaminE > firstProduct?.vitaminE) ? 'text-success' : ''}}">{{secondProduct?.vitaminE}} g</td>
+                                </tr>
+                                <tr>
+                                    <td class="first-column">Sắt</td>
+                                    <td class="pro-stock {{(firstProduct?.iron > secondProduct?.iron) ? 'text-success' : ''}}">{{firstProduct?.iron}} g</td>
+                                    <td class="pro-stock {{(secondProduct?.iron > firstProduct?.iron) ? 'text-success' : ''}}">{{secondProduct?.iron}} g</td>
+                                </tr>
+                                <tr>
+                                    <td class="first-column">Kẽm</td>
+                                    <td class="pro-stock {{(firstProduct?.zinc > secondProduct?.zinc) ? 'text-success' : ''}}">{{firstProduct?.zinc}} g</td>
+                                    <td class="pro-stock {{(secondProduct?.zinc > firstProduct?.zinc) ? 'text-success' : ''}}">{{secondProduct?.zinc}} g</td>
+                                </tr>
+                                <tr>
+                                    <td class="first-column">Thêm vào giỏ hàng</td>
+                                    <td><a href="javascript:void(0)" (click)="addToCart(firstProduct, (type == 'food') ? 'foodId' : 'comboId')" class="btn btn__bg btn__sqr">Thêm Vào Giỏ Hàng</a></td>
+                                    <td><a href="javascript:void(0)" (click)="addToCart(secondProduct, (type == 'food') ? 'foodId' : 'comboId')" class="btn btn__bg btn__sqr">Thêm Vào Giỏ Hàng</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <!-- Compare Page Content End -->
+            </div>
+        </div>
+    </div>
+</div>

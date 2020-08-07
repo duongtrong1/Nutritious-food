@@ -1,0 +1,40 @@
+.wrapper {
+    background-image: url("../../assets/images/form-wizard-bg.jpg");
+    background-size: cover;
+    /* background-repeat: round; */
+}
+
+select{
+    background: white
+}
+
+.single-input-item button{
+    margin-left: 40%;
+}
+
+.error {
+    color: red;
+    margin-top: 25px;
+}
+
+.hoanthanh {
+    margin-left: 30%;
+    margin-top: 35px;
+}
+
+h2 {
+    font-family: Arial, sans-serif;
+    color: #333;
+    text-align: center;
+    font-weight: 900;
+    letter-spacing: 2px;
+    margin-bottom: 29px;
+    font-weight: 900;
+}
+
+.itemName {
+	color: #333333;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	width: 100%;
+}

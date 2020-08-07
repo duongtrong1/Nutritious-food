@@ -1,0 +1,20 @@
+<div class="waiting" *ngIf="isLoading">
+    <div class="loading-spinner">
+        <div class="dot dotOne"></div>
+        <div class="dot dotTwo"></div>
+        <div class="dot dotThree"></div>
+    </div>
+</div>
+<div *ngIf="paymentSuccess && !isLoading" class="payment-success">
+    <h2>Thanh toán thành công</h2>
+    <p>Cảm ơn bạn đã sử dụng dịch vụ của <strong>AnLanhManh</strong></p>
+    <p>chúc bạn có một bữa ăn ngon miệng!</p>
+    <a href="/shipping?orderId={{orderId}}" class="btn">Xem Đơn Hàng</a>
+</div>
+
+<div *ngIf="!paymentSuccess && !isLoading" class="payment-error">
+    <h2>Thanh toán không thành công</h2>
+    <p>Thanh toán không thành công, vui lòng thanh toán hoặc đặt hàng lại để tiếp tục sử dụng dịch vụ</p>
+    <p>Cảm ơn bạn đã sử dụng dịch vụ của <strong>AnLanhManh</strong></p>
+    <a href="javascript:void(0)" class="btn">Thanh Toán Lại</a>
+</div>

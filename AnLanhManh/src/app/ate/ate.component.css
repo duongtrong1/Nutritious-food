@@ -1,0 +1,28 @@
+.ateForm {
+    margin-left: 25%
+}
+
+.error {
+    color: red;
+    margin-top: 15px;
+    display: block
+}
+
+.text-success {
+    margin-top: 15px;
+    display: block;
+}
+
+.form-control {
+    height: 50px;
+}
+
+.my-account-wrapper {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    z-index: 1;
+    top: 0;
+    overflow: hidden;
+}

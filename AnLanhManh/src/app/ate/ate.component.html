@@ -1,0 +1,62 @@
+<div class="my-account-wrapper pt-60 pb-60">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <!-- My Account Page Start -->
+                <div class="myaccount-page-wrapper">
+                    <!-- My Account Tab Menu Start -->
+                    <div class="row">
+                        <!-- My Account Tab Menu End -->
+
+                        <!-- My Account Tab Content Start -->
+                        <div class="col-lg-9 col-md-8">
+                            <div class="tab-content" id="myaccountContent">
+                                <div class="tab-pane fade show active" id="changepassword" role="tabpanel">
+                                    <div class="myaccount-content">
+                                        <div class="account-details-form">
+                                            <h3>Hãy cho chúng tôi biết bạn đã ăn gì.</h3>
+                                            <fieldset>
+                                                <div class="row">
+                                                    <form name="ateForm" class="col-lg-12">
+                                                        <div class="single-input-item">
+                                                            <h6 class="required" style="margin-bottom:20px;">Chọn món mà
+                                                                bạn đã ăn</h6>
+                                                            <ng-multiselect-dropdown [placeholder]="'Vui lòng chọn món'"
+                                                                [data]="listFood" [(ngModel)]="selectedItems"
+                                                                name="selectedItems" [settings]="dropdownSettings">
+                                                            </ng-multiselect-dropdown>
+                                                        </div>
+                                                        <div class="single-input-item">
+                                                            <h6 class="required">Bạn ăn nó vào bữa nào?</h6>
+                                                            <select style="margin-top: 15px" #buaan name="meals"
+                                                                class="form-control col-lg-8">
+                                                                <option value="1">Sáng</option>
+                                                                <option value="2">Trưa</option>
+                                                                <option value="3">Tối</option>
+                                                            </select>
+                                                        </div>
+                                                        <br>
+                                                        <span *ngIf="textError != null"
+                                                            class="error">{{textError}}</span>
+                                                            <span *ngIf="textSuccess != null"
+                                                            class="text-success">{{textSuccess}}</span>
+                                                        <div class="single-input-item">
+                                                            <button type="button"
+                                                                (click)="saveHistory(buaan.value)"
+                                                                class="btn btn__bg btn__sqr">Hoàn
+                                                                Thành</button>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </fieldset>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> <!-- My Account Tab Content End -->
+                    </div>
+                </div> <!-- My Account Page End -->
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,141 @@
+<!-- breadcrumb area start -->
+<div class="breadcrumb-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="breadcrumb-wrap text-center" #target>
+                    <nav aria-label="breadcrumb">
+                        <h2>Đồ Ăn Dinh Dưỡng</h2>
+                        <ul class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="/">Trang Chủ</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Đồ Ăn Dinh Dưỡng</li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- breadcrumb area end -->
+
+<!-- page main wrapper start -->
+<div class="shop-main-wrapper pt-60 pb-60">
+    <div class="container">
+        <div class="row">
+            <!-- sidebar area start -->
+            <div class="col-lg-3 order-2 order-lg-1">
+                <div class="sidebar-wrapper mt-md-60 mt-sm-60">
+                    <!-- single sidebar start -->
+                    <div class="sidebar-single">
+                        <div class="sidebar-title">
+                            <h3>Danh Mục</h3>
+                        </div>
+                        <div class="sidebar-body">
+                            <ul class="sidebar-category">
+                                <li *ngFor="let cate of dataCate">
+                                    <a href="javascript:void(0)"
+                                        (click)="chooseCategoryParent(cate.id)">{{cate?.name}}</a>
+                                    <div *ngIf="childCategory == cate.id">
+                                        <ul class="children">
+                                            <li *ngFor="let cate2 of dataCate2">
+                                                <a href="javascript:void(0)"
+                                                    (click)="chooseProduct(cate2.id)">{{cate2?.name}}</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- single sidebar end -->
+                    <!-- single sidebar start -->
+
+                    <!-- single sidebar end -->
+                    <!-- single sidebar start -->
+
+                    <!-- single sidebar start -->
+                    <!-- <div class="sidebar-single">
+                        <div class="sidebar-banner">
+                            <a href="javascript:void(0)">
+                                <img src="assets/img/banner/banner_left.jpg" alt="">
+                            </a>
+                        </div>
+                    </div> -->
+                    <!-- single sidebar end -->
+                </div>
+            </div>
+            <!-- sidebar area end -->
+            <!-- shop main wrapper start -->
+            <div class="col-lg-9 order-1 order-lg-2">
+                <div class="shop-product-wrapper">
+                    <!-- shop product top wrap start -->
+                    <div class="shop-top-bar">
+                        <div class="row">
+
+                        </div>
+                    </div>
+                    <!-- shop product top wrap start -->
+
+                    <!-- product item list start -->
+                    <div class="shop-product-wrap grid-view row">
+                        <div class="col-lg-4 col-md-4 col-sm-6" *ngFor="let food of dataFood">
+                            <!-- product grid item start -->
+                            <div class="product-item mb-50">
+                                <div class="product-thumb">
+                                    <a href="/p/{{util.generateURL(food.name, food.id)}}">
+                                        <img src="{{food.image}}" alt="">
+                                    </a>
+                                    <div class="quick-view-link">
+                                        <a href="/p/{{util.generateURL(food.name, food.id)}}" data-toggle=""
+                                            data-target=""> <span data-toggle="tooltip" title="Chi tiết"><i
+                                                    class="ion-ios-eye-outline"></i></span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="product-content text-center">
+                                    <div class="ratings">
+                                        <span><i class="ion-android-star"></i></span>
+                                        <span><i class="ion-android-star"></i></span>
+                                        <span><i class="ion-android-star"></i></span>
+                                        <span><i class="ion-android-star"></i></span>
+                                        <span><i class="ion-android-star"></i></span>
+                                    </div>
+                                    <div class="product-name">
+                                        <h4 class="h5">
+                                            <a href="/p/{{util.generateURL(food.name, food.id)}}">{{food.name}}</a>
+                                            <p class="price-box"><span class="regular-price">{{food.calorie}} calo/
+                                                    {{food.weight}} g</span></p>
+                                        </h4>
+                                    </div>
+                                    <div class="price-box">
+                                        <span class="regular-price">{{util.formatPrice(food.price)}}</span>
+                                        <span class="old-price"><del></del></span>
+                                    </div>
+                                    <div class="product-action-link">
+                                        <a href="javascript:void(0)" data-toggle="tooltip" title="Yêu thích"><i
+                                                class="ion-android-favorite-outline"></i></a>
+                                        <a href="javascript:void(0)" (click)="addToCart(food)" data-toggle="tooltip"
+                                            title="Thêm vào giỏ hàng"><i class="ion-bag"></i></a>
+                                        <a href="/compare?id={{food.id}}&type=food" data-toggle="tooltip" title="So sánh"><i
+                                                class="ion-ios-shuffle"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- product grid item end -->
+                        </div>
+
+                    </div>
+                    <!-- product item list end -->
+
+                    <!-- start pagination area -->
+                    <div class="paginatoin-area text-center mt-30" *ngIf="paginationCurrentPage != null && totalPage != 1 && paginationCurrentPage != totalPage">
+                        <button (click)="loadMoreData(paginationCurrentPage + 1)">Xem Thêm</button>
+                    </div>
+                    <!-- end pagination area -->
+                </div>
+            </div>
+            <!-- shop main wrapper end -->
+        </div>
+    </div>
+</div>
+<!-- page main wrapper end -->

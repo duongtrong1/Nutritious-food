@@ -1,0 +1,17 @@
+.no-data {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tab-content {
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+}
+
+.contact-content-body .tab-pane > .row {
+    max-width: 100%!important;
+}

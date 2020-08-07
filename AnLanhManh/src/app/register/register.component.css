@@ -1,0 +1,9 @@
+div .login-reg-form-wrap {
+    width: 60%;
+    margin-left: 140px;
+}
+
+.textError {
+    margin-top: 100px;
+    color: red;
+}

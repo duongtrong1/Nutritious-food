@@ -1,0 +1,61 @@
+<!-- breadcrumb area start -->
+<div class="breadcrumb-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="breadcrumb-wrap text-center">
+                    <nav aria-label="breadcrumb">
+                        <h2>Lộ trình</h2>
+                        <ul class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="index.html">Trang chủ</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Lộ trình ăn uống</li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- breadcrumb area end -->
+
+<!-- blog main wrapper start -->
+<div class="blog-main-wrapper pt-60 pb-60 pb-md-54 pb-sm-60">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="blog-item-wrapper mb-30" *ngFor="let schedule of dataSchedule">
+                    <div class="blog-img blog-img__full-width">
+                        <div class="blog-gallery-slider slider-arrow-style slider-arrow-style__style-2">
+                            <div class="blog-single-slide">
+                                <img [src]="schedule.image" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="blog-inner-content">
+                        <h3><a href="/s/{{util.generateURL(schedule.name, schedule.id)}}">{{schedule.name}}</a></h3>
+                        <ul class="blog-meta">
+                            <li>Post by: <span>Admin</span></li>
+                            <li>March 10 2019</li>
+                        </ul>
+                        <p>{{schedule.description}}</p>
+                        <div class="action-link mb-20">
+                            <a href="/s/{{util.generateURL(schedule.name, schedule.id)}}" data-toggle="tooltip" class="add-to-cart">Xem chi tiết</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- start pagination area -->
+                <!-- <div class="paginatoin-area text-center mt-60 mt-md-52 mt-sm-60">
+                    <ul class="pagination-box">
+                        <li><a class="Previous" href="#"><i class="ion-ios-arrow-left"></i></a></li>
+                        <li class="active"><a href="#">1</a></li>
+                        <li><a href="#">2</a></li>
+                        <li><a href="#">3</a></li>
+                        <li><a class="Next" href="#"><i class="ion-ios-arrow-right"></i></a></li>
+                    </ul>
+                </div> -->
+                <!-- end pagination area -->
+            </div>
+        </div>
+    </div>
+</div>
+<!-- blog main wrapper end -->

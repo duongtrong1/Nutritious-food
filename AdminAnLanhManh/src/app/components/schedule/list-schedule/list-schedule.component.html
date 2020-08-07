@@ -1,0 +1,32 @@
+<div class="pd-20">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb mg-b-0">
+            <li class="breadcrumb-item"><a href="/">Trang Chủ</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Danh Sách Lịch Trình</li>
+        </ol>
+    </nav>
+    <div class="table-responsive mt-4">
+        <table class="table table-bordered mg-b-0">
+            <thead>
+                <tr>
+                    <th scope="col" width="5%">ID</th>
+                    <th scope="col" width="30%">Tên</th>
+                    <th scope="col" width="40%">Mô Tả</th>
+                    <th scope="col" width="10%"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of listSchedule.data">
+                    <th scope="row">{{item.id}}</th>
+                    <td><a href="/schedule/details?scheduleId={{item.id}}">{{item.name}}</a></td>
+                    <td>{{item.description}}</td>
+                    <!-- <td>{{util.formatPrice(item.price)}}</td> -->
+                    <td>
+                        <a href="/schedule/create?scheduleId={{item.id}}" class="mg-r-5">Sửa</a>
+                        <a href="javascript:void(0)" (click)="deleteSchedule(item.id)" class="text-danger">Xóa</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div><!-- table-responsive -->
+</div>

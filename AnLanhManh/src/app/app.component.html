@@ -1,0 +1,283 @@
+<!-- Start Header Area -->
+<header class="header-area" #top>
+  <!-- header top start -->
+  <div class="header-top">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-3">
+          <div class="logo">
+            <a href="/">
+              <img src="assets/img/logo/logo.png" alt="Brand Logo">
+            </a>
+          </div>
+        </div>
+        <div class="col-lg-9">
+          <div class="header-settings-area">
+            <div class="header-top-left">
+              <nav>
+                <ul class="d-flex justify-content-center">
+                  <li>
+                    <div class="dropdown header-top-dropdown">
+                      <a class="dropdown-toggle" id="myaccount" data-toggle="dropdown" aria-haspopup="true"
+                        aria-expanded="false">
+                        Tài khoản
+                        <i class="fa fa-angle-down"></i>
+                      </a>
+                      <div class="dropdown-menu" aria-labelledby="myaccount">
+                        <a class="dropdown-item" href="/login" *ngIf="!isLogin">Đăng nhập</a>
+                        <a class="dropdown-item" href="/register" *ngIf="!isLogin">Đăng ký</a>
+                        <a class="dropdown-item" href="/profile" *ngIf="isLogin">Trang Cá Nhân</a>
+                        <a class="dropdown-item" href="javascript:void(0)" *ngIf="isLogin" (click)="logout()">Đăng
+                          xuất</a>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+            <div class="header-top-right">
+              <div class="header-search-box">
+                <form>
+                  <input type="text" #search (keyup.enter)="searchFunc(search.value)" placeholder="Tìm kiếm sản phẩm">
+                  <button (click)="searchFunc(search.value)"><i class="ion-ios-search-strong"></i></button>
+                </form>
+              </div>
+              <div class="mini-cart-wrap">
+                <a href="/cart"><i class="ion-bag"></i>
+                  <span class="notification">{{getTotalCart()}}</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- header top end -->
+
+  <!-- main menu start -->
+  <div class="main-menu-area sticky">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="main-menu">
+            <div class="sticky-logo">
+              <a href="/">
+                <img src="assets/img/logo/logo_sticky.png" alt="brand logo">
+              </a>
+            </div>
+            <!-- main menu navbar start -->
+            <nav id="mobile-menu">
+              <ul>
+                <li>
+                  <a [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}" [routerLink]="['']">Trang
+                    Chủ</a>
+                </li>
+                <li><a href="javascript:void(0)">Sản Phẩm <i class="fa fa-angle-down"></i></a>
+                  <ul class="dropdown">
+                    <li>
+                      <a [routerLink]="['/pl/list']" [queryParams]="{ page: 1}">Đồ Ăn Dinh Dưỡng</a>
+                    </li>
+                    <li>
+                      <a [routerLink]="['/cl']" [queryParams]="{ page: 1}">Combo Đồ Ăn Dinh Dưỡng</a>
+                    </li>
+                  </ul>
+                </li>
+                <li><a [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}"
+                    [routerLink]="['schedule']" *ngIf="isLogin">Lịch trình ăn uống</a></li>
+                <li><a [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}"
+                    [routerLink]="['about']">Về Chúng Tôi</a></li>
+                <li><a [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}"
+                    [routerLink]="['contact']">Liên Hệ</a></li>
+                <div class="mini-cart-wrap sticky-logo">
+                  <a href="/cart"><i class="ion-bag"></i>
+                    <span class="notification">{{getTotalCart()}}</span>
+                  </a>
+                </div>
+              </ul>
+            </nav>
+            <!-- main menu navbar end -->
+          </div>
+        </div>
+        <div class="col-12 d-block d-lg-none">
+          <div class="mobile-menu"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- main menu end -->
+
+</header>
+<!-- end Header Area -->
+
+
+
+<!-- main wrapper start -->
+<main>
+
+  <router-outlet></router-outlet>
+
+</main>
+<!-- main wrapper end -->
+
+<!--== Start Footer Area Wrapper ==-->
+<footer class="footer-wrapper">
+
+  <!-- footer main area start -->
+  <div class="footer-main-area">
+    <div class="container">
+      <div class="footer-main-inner bdr-top pt-56 pb-60 pb-md-20 pb-sm-20">
+        <div class="row">
+          <div class="col-lg-3 col-md-6">
+            <div class="footer-widget">
+              <div class="footer-widget-title">
+                <h4>Thông Tin Liên Hệ</h4>
+              </div>
+              <div class="footer-widget-body">
+                <ul class="location-wrap">
+                  <li>
+                    <h6 class="title">Địa Chỉ:</h6>
+                    <p>Số 8A Tôn Thất Thuyết, Cầu Giấy, Hà Nội</p>
+                  </li>
+                  <li>
+                    <h6 class="title">Chăm Sóc Khách Hàng:</h6>
+                    <p>Hà Nội: 0987773751</p>
+                    <p>Đà Nẵng: 0972545780</p>
+                    <p>Sài Gòn: 0981522133</p>
+                  </li>
+                  <li>
+                    <h6 class="title">email:</h6>
+                    <p>Chăm sóc khách hàng: <a href="mailto:cskh@anlanhmanh.com">cskh@anlanhmanh.com</a></p>
+                    <p>Bộ phận kỹ thuật: <a href="mailto:support@anlanhmanh.com">support@anlanhmanh.com</a></p>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <div class="footer-widget">
+              <div class="footer-widget-title">
+                <h4>Đồ Ăn Mới</h4>
+              </div>
+              <div class="footer-widget-body">
+                <ul class="category-list">
+                  <li *ngFor="let item of dataFood">
+                    <div class="single-item single-item__footer-category">
+                      <div class="product-thumb">
+                        <a href="/p/{{util.generateURL(item.name, item.id)}}">
+                          <img [src]="item?.image" alt="">
+                        </a>
+                      </div>
+                      <div class="product-description">
+                        <div class="product-name">
+                          <h4 class="h5">
+                            <a href="/p/{{util.generateURL(item.name, item.id)}}">{{item?.name}}</a>
+                          </h4>
+                        </div>
+                        <div class="price-box">
+                          <span class="regular-price">{{util.formatPrice(item?.price)}}</span>
+                          <span class="old-price"><del></del></span>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <div class="footer-widget">
+              <div class="footer-widget-title">
+                <h4>Set Đồ Ăn Mới</h4>
+              </div>
+              <div class="footer-widget-body">
+                <ul class="category-list">
+                  <li *ngFor="let combo of dataCombo">
+                    <div class="single-item single-item__footer-category">
+                      <div class="product-thumb">
+                        <a href="/c/{{util.generateURL(combo.name, combo.id)}}">
+                          <img [src]="combo?.image" alt="">
+                        </a>
+                      </div>
+                      <div class="product-description">
+                        <div class="product-name">
+                          <h4 class="h5">
+                            <a href="/c/{{util.generateURL(combo.name, combo.id)}}">{{combo?.name}}</a>
+                          </h4>
+                        </div>
+                        <div class="price-box">
+                          <span class="regular-price">{{util.formatPrice(combo?.price)}}</span>
+                          <span class="old-price"><del></del></span>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <div class="footer-widget">
+              <div class="footer-widget-title">
+                <h4>Thông Báo Qua Email</h4>
+              </div>
+              <div class="footer-widget-body">
+                <div class="newsletter-desc">
+                  <p>Đăng ký nhận thông báo qua email để nhận thông tin cập nhật về sản phẩm mới, ưu đãi đặc biệt và
+                    thông tin giảm giá khác.</p>
+                  <form id="mc-form">
+                    <input type="email" id="mc-email" autocomplete="off" placeholder="Địa chỉ email của bạn">
+                    <button id="mc-submit"><i class="ion-paper-airplane"></i>Nhận Thông Báo</button>
+                  </form>
+                  <!-- mailchimp-alerts Start -->
+                  <div class="mailchimp-alerts">
+                    <div class="mailchimp-submitting"></div><!-- mailchimp-submitting end -->
+                    <div class="mailchimp-success"></div><!-- mailchimp-success end -->
+                    <div class="mailchimp-error"></div><!-- mailchimp-error end -->
+                  </div>
+                  <!-- mailchimp-alerts end -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- footer main area end -->
+
+  <!-- footer bottom area start -->
+  <div class="footer-bootom bg-gray pt-20 pb-20">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="copyright-text text-center text-md-left">
+            <p>© 2019 - Bản quyền của Công Ty Cổ Phần AnLanhManh - anlanhmanh.com</p>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="payment-method text-md-right text-center">
+            <img src="assets/img/payment.png" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- footer bottom area end -->
+
+</footer>
+<!--== End Footer Area Wrapper ==-->
+
+<!-- Scroll to top start -->
+<div class="scroll-top not-visible" (click)="scrollTop()">
+  <i class="fa fa-angle-up"></i>
+</div>
+<!-- Scroll to Top End -->
+
+<!--=======================Javascript============================-->
+<!--=== All Vendor Js ===-->
+<script src="assets/js/vendor.js"></script>
+<!--=== All Plugins Js ===-->
+<script src="assets/js/plugins.js"></script>
+<!--=== Active Js ===-->
+<script src="assets/js/active.js"></script>

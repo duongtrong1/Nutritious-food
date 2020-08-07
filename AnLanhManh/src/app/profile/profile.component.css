@@ -1,0 +1,44 @@
+.myaccount-table{
+    margin-top: 40px;
+}
+
+.error{
+    color: red;
+    margin-top: 35px;
+}
+
+.welcome a{
+    font-weight: bold;
+}
+
+.orderEmty {
+    margin-left: 10%;
+}
+
+.textOrder {
+    margin-left: 36%;
+}
+
+.buttonOrder {
+    margin-left: 34%;
+    margin-top: 3%;
+}
+
+.modal-content {
+    margin-left: -14%;
+    width: 135%;
+}
+
+.modal-title {
+    margin-left: 43%;
+}
+
+.modelImage img {
+    width: 60px;
+    height: 60px;
+}
+
+.table-bordered img {
+    max-width: 70px;
+    max-height: 70px;
+}

@@ -1,0 +1,307 @@
+<!-- breadcrumb area start -->
+<div class="breadcrumb-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="breadcrumb-wrap text-center">
+                    <nav aria-label="breadcrumb">
+                        <h2>Quản Lý Tài Khoản</h2>
+                        <ul class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="/">Trang chủ</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Tài khoản của tôi</li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- breadcrumb area end -->
+
+<!-- my account wrapper start -->
+<div class="my-account-wrapper pt-60 pb-60">
+    <div class="container" style="width: 500px">
+        <!-- Modal -->
+        <div class="modal fade" id="myModal" role="dialog">
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title mt-20">Chi tiết</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="myaccount-table table-responsive text-center">
+                            <table class="table table-bordered">
+                                <thead class="thead-light">
+                                    <tr>
+                                        <th>Tên sản phẩm</th>
+                                        <th>Ảnh</th>
+                                        <th>Giá Tiền</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let item of detailModal" class="modelImage">
+                                        <td><a
+                                                href="javascrip:void(0)">{{(item?.food) ? item?.food.name : item?.combo.name}}</a>
+                                        </td>
+                                        <td><img src="{{(item?.food) ? item?.food.image : item?.combo.image}}"></td>
+                                        <td>{{item?.quantity}} x
+                                            {{util.formatPrice((item?.food) ? item?.food.price : item?.combo.price)}}
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" (click)="reOrder(detailModal)">Đặt lại</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <!-- My Account Page Start -->
+                <div class="myaccount-page-wrapper">
+                    <!-- My Account Tab Menu Start -->
+                    <div class="row">
+                        <div class="col-lg-3 col-md-4">
+                            <div class="myaccount-tab-menu nav" role="tablist">
+                                <a href="#dashboad" class="active" data-toggle="tab"><i class="fa fa-dashboard"></i>
+                                    Bảng điều khiển</a>
+                                <a href="#account-info" data-toggle="tab"><i class="fa fa-user"></i> Chi tiết tài
+                                    khoản</a>
+
+                                <a href="#changepassword" data-toggle="tab"><i class="fa fa-key"></i>
+                                    Thay đổi mật khẩu</a>
+                                <a href="#orders" data-toggle="tab"><i class="fa fa-cart-arrow-down"></i>
+                                    Lịch sử mua hàng</a>
+                                <a href="#history" data-toggle="tab"><i class="fa fa-history"></i>
+                                        Lịch sử ăn uống</a>
+                                <a (click)="logout()" href="/login"><i class="fa fa-sign-out"></i>Đăng
+                                    xuất</a>
+                            </div>
+                        </div>
+                        <!-- My Account Tab Menu End -->
+
+                        <!-- My Account Tab Content Start -->
+                        <div class="col-lg-9 col-md-8">
+                            <div class="tab-content" id="myaccountContent">
+                                <!-- Single Tab Content Start -->
+                                <div class="tab-pane fade show active" id="dashboad" role="tabpanel">
+                                    <div class="myaccount-content">
+                                        <h3>Bảng điều khiển</h3>
+                                        <div class="welcome">
+                                            <p>Xin chào, <strong>{{myInfo?.name}}</strong> (Nếu không phải
+                                                <strong>{{myInfo?.name}} !</strong><a (click)="logout()" class="logout">
+                                                    Đăng xuất</a>)</p>
+                                        </div>
+                                        <p class="mb-0">- Từ bảng điều khiển tài khoản của bạn. bạn có thể dễ dàng kiểm
+                                            tra &
+                                            xem các đơn đặt hàng gần đây của bạn, quản lý địa chỉ giao hàng và thanh
+                                            toán của bạn
+                                            và chỉnh sửa mật khẩu và chi tiết tài khoản của bạn.</p>
+                                    </div>
+
+                                </div>
+                                <!-- Single Tab Content End -->
+
+                                <!-- Single Tab Content Start -->
+                                <div class="tab-pane fade" id="changepassword" role="tabpanel">
+                                    <div class="myaccount-content">
+                                        <div class="account-details-form">
+                                            <fieldset>
+                                                <legend>Thay đổi mật khẩu</legend>
+                                                <div class="single-input-item">
+                                                    <label for="current-pwd" class="required">Mật khẩu cũ</label>
+                                                    <input type="password" id="current-pwd" #oldPassword
+                                                        placeholder="Mật khẩu cũ" />
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-lg-6">
+                                                        <div class="single-input-item">
+                                                            <label for="new-pwd" class="required">Mật khẩu mới</label>
+                                                            <input type="password" #password id="new-pwd"
+                                                                placeholder="Mật khẩu mới" />
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-6">
+                                                        <div class="single-input-item">
+                                                            <label for="confirm-pwd" class="required">Nhập lại mật
+                                                                khẩu</label>
+                                                            <input type="password" #confirmPassword id="confirm-pwd"
+                                                                placeholder="Nhập lại mật khẩu" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <span *ngIf="textError != null" class="error">{{textError}}</span>
+                                            </fieldset>
+                                            <div class="single-input-item">
+                                                <button class="btn btn__bg btn__sqr"
+                                                    (click)="changePassword(oldPassword.value, password.value, confirmPassword.value)">Lưu
+                                                    thay đổi</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Single Tab Content End -->
+
+                                <div class="tab-pane fade" id="orders" role="tabpanel">
+                                    <div class="myaccount-content">
+                                        <h3>Lịch sử mua hàng</h3>
+                                        <div *ngIf="isShowForm != false">
+                                            <span class="textOrder">Bạn chưa mua sản phẩm nào.</span>
+                                            <br>
+                                            <button (click)="goHome()" class="btn btn btn__bg btn__sqr buttonOrder">Tiến hành mua
+                                                hàng.</button>
+                                        </div>
+                                        <div *ngIf="isShowForm == false" class="myaccount-table table-responsive text-center">
+                                            <table class="table table-bordered">
+                                                <thead class="thead-light">
+                                                    <tr>
+                                                        <th>Mã Đơn Hàng</th>
+                                                        <th>Trạng Thái</th>
+                                                        <th>Giá</th>
+                                                        <th></th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr *ngFor="let product of listProductOrder">
+                                                        <td>#{{product?.code}}</td>
+                                                        <td [innerHTML]="getStatus(product?.status)"></td>
+                                                        <td>{{util.formatPrice(product?.totalPrice)}}</td>
+                                                        <td><a data-toggle="modal" data-target="#myModal"
+                                                                class="btn btn__bg btn__sqr"
+                                                                (click)="openDetail(product?.orderDetail)"
+                                                                style="color: #fff;">Xem chi tiết</a></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <div id="listOrder" class="tab-pane fade" role="tabpanel">
+                                            <h3>Chi Tiết Đơn Hàng</h3>
+                                            <div class="myaccount-table table-responsive text-center">
+                                                <table class="table table-bordered">
+                                                    <thead class="thead-light">
+                                                        <tr>
+                                                            <th>Mã Đơn Hàng</th>
+                                                            <th>Trạng Thái</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td><a href="javascrip:void(0)"></a></td>
+                                                            <td></td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Single Tab Content Start -->
+                                <div class="tab-pane fade" id="account-info" role="tabpanel">
+                                    <div class="myaccount-content">
+                                        <h3>Chi tiết tài khoản</h3>
+                                        <div class="account-details-form">
+                                            <form action="#">
+                                                <div class="row">
+                                                    <div class="col-lg-6">
+                                                        <div class="single-input-item">
+                                                            <label for="first-name" class="required">Tên</label>
+                                                            <input disabled type="text" id="first-name" value={{myInfo?.name}} />
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-6">
+                                                        <div class="single-input-item">
+                                                            <label for="last-name" class="required">Tên người
+                                                                dùng</label>
+                                                            <input disabled type="text" id="last-name"
+                                                                value={{myInfo?.username}} />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="single-input-item">
+                                                    <label for="display-name" class="required">Email</label>
+                                                    <input disabled type="text" id="display-name" value={{myInfo?.email}} />
+                                                </div>
+                                                <div class="single-input-item">
+                                                    <label for="email" class="required">Số điện thoại</label>
+                                                    <input disabled type="email" id="email" value={{myInfo?.phone}} />
+                                                </div>
+                                                <div class="myaccount-table table-responsive text-center">
+                                                    <h3>Thể trạng cơ thể</h3>
+                                                    <table class="table table-bordered">
+                                                        <thead class="thead-light">
+                                                            <tr>
+                                                                <th>Chiều Cao</th>
+                                                                <th>Cân Nặng</th>
+                                                                <th>BMI</th>
+                                                                <th>Calo tiêu thụ hàng ngày</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>{{userDetails?.height}} cm</td>
+                                                                <td>{{userDetails?.weight}} kg</td>
+                                                                <td [innerHTML]="getStatus2(userDetails?.bmi)"></td>
+                                                                <td>{{userDetails?.caloriesConsumed}}</td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div> <!-- Single Tab Content End -->
+
+                                <div class="tab-pane fade" id="history" role="tabpanel">
+                                        <div class="myaccount-content">
+                                            <h3>Lịch sử ăn uống</h3>
+                                            <div *ngIf="isHistory" class="account-details-form">
+                                                <form action="#">
+                                                    <div class="myaccount-table table-responsive text-center">
+                                                        <span style="font-size: 17px" class="mt-50">Lịch sử của bạn đang trống!</span>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                            <div *ngIf="!isHistory" class="account-details-form">
+                                                <form action="#">
+                                                    <div class="myaccount-table table-responsive text-center">
+                                                        <table class="table table-bordered">
+                                                            <thead class="thead-light">
+                                                                <tr>
+                                                                    <th>Tên món</th>
+                                                                    <th>Ảnh</th>
+                                                                    <th>Calo</th>
+                                                                    <th>Ngày Đặt</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <tr *ngFor="let item of listFoodHistory">
+                                                                    <td><a href="{{(item?.food) ? '/p/' + util.generateURL(item.food.name, item.food.id) : '/c/' + util.generateURL(item.combos.name, item.combos.id)}}">{{(item?.food) ? item?.food.name : item?.combo.name}}</a></td>
+                                                                    <td><img src="{{(item?.food) ? item?.food.image : item?.combo.image}}"></td>
+                                                                    <td>{{item?.calorie}}</td>
+                                                                    <td>{{item?.createdAt.split(' ')[0]}}</td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div> <!-- Single Tab Content End -->
+                            </div>
+                        </div> <!-- My Account Tab Content End -->
+                    </div>
+                </div> <!-- My Account Page End -->
+            </div>
+        </div>
+    </div>
+</div>
+<!-- my account wrapper end -->

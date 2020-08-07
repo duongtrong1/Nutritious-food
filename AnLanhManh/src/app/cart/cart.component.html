@@ -1,0 +1,117 @@
+<!-- breadcrumb area start -->
+<div class="breadcrumb-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="breadcrumb-wrap text-center">
+                    <nav aria-label="breadcrumb">
+                        <h2>Giỏ Hàng</h2>
+                        <ul class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="/">Trang Chủ</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Giỏ Hàng</li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- breadcrumb area end -->
+
+<div class="cart-main-wrapper pt-60 pb-60" *ngIf="listCart == null">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <!-- Cart Table Area -->
+                <div class="cart-table table-responsive">
+                    <table class="row table table-bordered" style="margin: 3rem 0;">
+                        <div class="col-lg-12 text-center ml-auto">
+                            <img src="assets/img/cart/cart.png" width="20%">
+                        </div>
+                        <div class="text col-lg-12 text-center">
+                            <h5>Không có sản phẩm nào trong giỏ hàng của bạn.</h5>
+                        </div>
+                        <div class="col-lg-12 text-center r-2">
+                            <a href="/" class="btn">Tiếp tục chọn món</a>
+                        </div>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- cart main wrapper start -->
+<div class="cart-main-wrapper pt-60 pb-60" *ngIf="listCart != null">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <!-- Cart Table Area -->
+                <div class="cart-table table-responsive">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th class="pro-thumbnail">Ảnh</th>
+                                <th class="pro-title">Tên sản phẩm</th>
+                                <th class="pro-price">Giá</th>
+                                <th class="pro-quantity">Số lượng</th>
+                                <th class="pro-subtotal">Tổng</th>
+                                <th class="pro-remove"><a (click)="removeAllItem()"><i class="fa fa-trash-o"></i></a>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let item of listCart.products">
+                                <td class="pro-thumbnail"><a
+                                        href="{{(item?.combos) ? '/p/' + util.generateURL(item.name, item.id) : '/c/' + util.generateURL(item.name, item.id)}}"><img
+                                            class="img-fluid" [src]="item.image" alt="Product" /></a></td>
+                                <td class="pro-title"><a
+                                        href="{{(item?.combos) ? '/p/' + util.generateURL(item.name, item.id) : '/c/' + util.generateURL(item.name, item.id)}}"
+                                        target="_blank">{{item?.name}}</a></td>
+                                <td class="pro-price"><span>{{util.formatPrice(item?.price)}}</span></td>
+                                <td class="pro-quantity">
+                                    <div class="pro-qty"><input type="number" #qtt
+                                            (keyup)="sumItem(qtt.value, item?.id)" min="1" [value]="item?.quantity">
+                                    </div>
+                                </td>
+                                <td class="pro-subtotal">
+                                    <span>{{util.formatPrice(totalPrice(qtt.value, item?.price))}}</span></td>
+                                <td class="pro-remove"><a (click)="removeItem(item?.id)"><i
+                                            class="fa fa-trash-o"></i></a></td>
+                            </tr>
+                            <h3 *ngIf="textError != null" class="error">{{textError}}</h3>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <!-- Cart Calculation Area -->
+            <div class="col-lg-5 ml-auto">
+                <div class="cart-calculator-wrapper">
+                    <div class="cart-calculate-items">
+                        <h3>Tổng</h3>
+                        <div class="table-responsive">
+                            <table class="table">
+                                <tr>
+                                    <td>Tổng đơn hàng</td>
+                                    <td>{{util.formatPrice(getTotalPriceCart())}}</td>
+                                </tr>
+                                <tr class="total">
+                                    <td>VAT</td>
+                                    <td>{{util.formatPrice(0)}}</td>
+                                </tr>
+                                <tr class="total">
+                                    <td>Tổng thanh toán</td>
+                                    <td class="total-amount">{{util.formatPrice(getTotalPriceCart())}}</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <a (click)="checkLogin()" class="btn btn__bg d-block" style="color: #fff;">Tiến hành đặt hàng</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- cart main wrapper end -->

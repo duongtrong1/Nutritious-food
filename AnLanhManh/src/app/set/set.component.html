@@ -1,0 +1,127 @@
+<!-- breadcrumb area start -->
+<div class="breadcrumb-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="breadcrumb-wrap text-center" #target>
+                    <nav aria-label="breadcrumb">
+                        <h2>Set Đồ Ăn Dinh Dưỡng</h2>
+                        <ul class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="/">Trang chủ</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Bữa ăn dinh dưỡng</li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- breadcrumb area end -->
+
+<!-- page main wrapper start -->
+<div class="shop-main-wrapper pt-60 pb-60">
+    <div class="container">
+        <div class="row">
+            <!-- sidebar area start -->
+            <div class="col-lg-3 order-2 order-lg-1">
+                <div class="sidebar-wrapper mt-md-60 mt-sm-60">
+                    <!-- single sidebar start -->
+                    <div class="sidebar-single">
+                        <div class="sidebar-title">
+                            <h3>Danh mục</h3>
+                        </div>
+                        <div class="sidebar-body">
+                            <ul class="sidebar-category">
+                                <li *ngFor="let cate of dataCate">
+                                    <a href="javascript:void(0)"
+                                        (click)="chooseCategoryParent(cate.id)">{{cate?.name}}</a>
+                                    <div *ngIf="childCategory == cate.id">
+                                        <ul class="children">
+                                            <li *ngFor="let cate2 of dataCate2">
+                                                <a href="javascript:void(0)"
+                                                (click)="chooseProduct(cate2.id)">{{cate2?.name}}</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- single sidebar end -->
+                    <!-- single sidebar start -->
+                    <!-- <div class="sidebar-single">
+                        <div class="sidebar-banner">
+                            <a href="javascript:void(0)">
+                                <img src="assets/img/banner/banner_left.jpg" alt="">
+                            </a>
+                        </div>
+                    </div> -->
+                    <!-- single sidebar end -->
+                </div>
+            </div>
+            <!-- sidebar area end -->
+            <!-- shop main wrapper start -->
+            <div class="col-lg-9 order-1 order-lg-2">
+                <div class="shop-product-wrapper">
+                    <!-- shop product top wrap start -->
+
+                    <!-- shop product top wrap start -->
+
+                    <!-- product item list start -->
+                    <div class="shop-product-wrap list-view row">
+                        <div class="col-lg-4 col-md-4 col-sm-6">
+                            <!-- product list item start -->
+                            <div class="product-list-item mb-30" *ngFor="let combo of dataCombo">
+                                <div class="product-thumb">
+                                    <a href="/c/{{util.generateURL(combo.name, combo.id)}}">
+                                        <img src="{{combo.image}}" alt="">
+                                    </a>
+                                </div>
+                                <div class="product-content-list">
+                                    <div class="ratings">
+                                        <span><i class="ion-android-star"></i></span>
+                                        <span><i class="ion-android-star"></i></span>
+                                        <span><i class="ion-android-star"></i></span>
+                                        <span><i class="ion-android-star"></i></span>
+                                        <span><i class="ion-android-star"></i></span>
+                                    </div>
+                                    <div class="product-name">
+                                        <h4><a href="/c/{{util.generateURL(combo.name, combo.id)}}">{{combo.name}}</a>
+                                        </h4>
+                                    </div>
+                                    <div class="price-box">
+                                        <span class="regular-price">{{util.formatPrice(combo.price)}}</span>
+                                    </div>
+                                    <div class="price-box">
+                                        <span class="regular-price">{{combo.calorie}} calo / {{combo.weight}}g</span>
+                                    </div>
+                                    <p>{{combo.description}}</p>
+                                    <div class="action-link">
+                                        <a href="javascript:void(0)" (click)="addToCart(combo)" data-toggle="tooltip"
+                                            title="Thêm vào giỏ hàng" class="add-to-cart">Thêm vào giỏ hàng</a>
+                                        <a href="javascript:void(0)" data-toggle="tooltip" title="Yêu thích"><i
+                                                class="ion-android-favorite-outline"></i></a>
+                                        <a href="/compare?id={{combo.id}}&type=combo" data-toggle="tooltip" title="So sánh"><i
+                                                class="ion-ios-shuffle"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- product list item start -->
+                        </div>
+
+                    </div>
+                    <!-- product item list end -->
+
+                    <!-- start pagination area -->
+                    <div class="paginatoin-area text-center mt-30"
+                        *ngIf="paginationCurrentPage != null && totalPage != 1 && paginationCurrentPage != totalPage">
+                        <button (click)="loadMoreData(paginationCurrentPage + 1)">Xem Thêm</button>
+                    </div>
+                    <!-- end pagination area -->
+                </div>
+            </div>
+            <!-- shop main wrapper end -->
+        </div>
+    </div>
+</div>
+<!-- page main wrapper end -->

@@ -1,0 +1,23 @@
+.modal-body h5 {
+    margin-bottom: 15px
+}
+
+.modal.show {
+    background-color: #fff
+}
+
+.modal-body .spinner-border {
+    position: absolute;
+    margin-left: 10px
+}
+
+.compare-table .table tbody tr td.product-image-title .image {
+    height: 20rem;
+    width: auto;
+}
+
+.img-fluid {
+    width: 100%;
+    height: 100%;
+    object-fit: cover
+}
