@@ -1,1 +1,1 @@
-mvn clean install && docker build -t nutritious-food .
+mvn clean package && docker build -t nutritious-food .
