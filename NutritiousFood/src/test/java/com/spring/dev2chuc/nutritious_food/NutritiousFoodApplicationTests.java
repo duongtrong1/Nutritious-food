@@ -1,13 +1,13 @@
-package com.spring.dev2chuc.nutritious_food;
+// package com.spring.dev2chuc.nutritious_food;
 
-import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.context.SpringBootTest;
+// import org.junit.jupiter.api.Test;
+// import org.springframework.boot.test.context.SpringBootTest;
 
-@SpringBootTest
-class NutritiousFoodApplicationTests {
+// @SpringBootTest
+// class NutritiousFoodApplicationTests {
 
-	@Test
-	void contextLoads() {
-	}
+// 	@Test
+// 	void contextLoads() {
+// 	}
 
-}
+// }
