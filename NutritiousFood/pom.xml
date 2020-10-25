@@ -145,19 +145,6 @@
         <pluginManagement>
             <plugins>
                 <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-jar-plugin</artifactId>
-                    <version>2.4</version>
-                    <configuration>
-                        <archive>
-                            <manifest>
-                                <addClasspath>true</addClasspath>
-                                <mainClass>com.spring.dev2chuc.nutritious_food.NutritiousFoodApplication</mainClass>
-                            </manifest>
-                        </archive>
-                    </configuration>
-                </plugin>
-                <plugin>
                     <groupId>org.sonarsource.scanner.maven</groupId>
                     <artifactId>sonar-maven-plugin</artifactId>
                     <version>3.5.0.1254</version>
@@ -210,8 +197,9 @@
                 <plugin>
                     <groupId>org.springframework.boot</groupId>
                     <artifactId>spring-boot-maven-plugin</artifactId>
-                    <configuration>
+                    <configuration>    
                         <executable>true</executable>
+                        <mainClass>com.spring.dev2chuc.nutritious_food.NutritiousFoodApplication</mainClass>
                     </configuration>
                     <executions>
                         <execution>
